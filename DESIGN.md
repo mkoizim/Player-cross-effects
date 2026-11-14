@@ -575,3 +575,24 @@ not established.
   and pitcher hand-specific talent and so counted the platoon effect twice
   (hand gap 56 points vs 35 realized). The pitcher now enters as a deviation
   from the average pitcher of his hand. Calibration slope is 0.97.
+
+### 13.4 Additions after final-review questions (2026-11-14)
+
+- **Sources and terms.** A repo-specific cloud environment now allows the
+  article hosts and MLB hosts. MLB's Terms of Use prohibit using "automated
+  scripts to collect information from or otherwise interact with" its sites,
+  and its data notice permits only "individual, non-commercial, non-bulk use."
+  Statcast and the stats API are therefore not used. One exploratory request
+  to the transactions endpoint was made before that clause was read; the
+  response was deleted and nothing from it is in the repo.
+- **Literature read in full** (FanGraphs ×4, IZA paper; SABR page is an
+  excerpt; Bradbury–Drinen abstract only). No estimate of the neighbor effect
+  found. Summary in README.
+- **Design D run from Retrosheet** (`scripts/m10_absence_design.py`):
+  absences of regular right-side hitters as an instrument for a lefty's
+  neighbors. First stage +14 pp (t = 6.5). IV on E1 −3.0 pp [−13.8, +7.8]; on
+  E2 −0.0031 [−0.0095, +0.0033]. Inconclusive: intervals contain both the
+  Design A estimates and zero.
+- **Dollar conversion** uses $11.23M per win (range $6.74M–$12.84M), taken
+  from the FanGraphs article itself. The $8M first used came from a search
+  summary and does not match the article.

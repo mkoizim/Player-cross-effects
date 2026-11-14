@@ -39,7 +39,7 @@ Final deliverable is `README.md`, written for an MLB front-office reader.
 | Retrosheet event files, rosters, game logs | `data/raw/retrosheet/` | Fetched by `python -m pce.fetch` at the SHA pinned in `config.toml`. Layout: `seasons/YYYY/` (event files `*.EVA/*.EVN`, rosters `*.ROS`, game log `GLYYYY.TXT`, filename case varies). Complete through 2025 as of 2026-11-14 |
 | Chadwick tools (`cwevent`, `cwgame`) | source `data/raw/chadwick-src/`, binaries `data/raw/chadwick/` | Cloned at the tag pinned in `config.toml` and built from source by `pce.fetch`; needs `autoreconf`, `make`, `gcc` |
 | Chadwick register (ID crosswalk) | `data/raw/register/` | `git clone https://github.com/chadwickbureau/register`, pinned |
-| Statcast | `data/raw/statcast/` | **Not yet ingested.** `pybaseball`, cached per date range with a manifest of query dates. Used only where Retrosheet cannot answer (xwOBA, pitch-level). `baseballsavant.mlb.com` was blocked by the cloud environment's network policy on 2026-11-14 |
+| Statcast, MLB stats API | not used | **Do not script against MLB-hosted sites** (`baseballsavant.mlb.com`, `statsapi.mlb.com`, so also `pybaseball` Statcast pulls): MLB Terms of Use prohibit automated collection, and the data notice allows only individual, non-commercial, non-bulk use. Needs written permission from MLB or an explicit user decision |
 | Parsed / derived tables | `data/interim/`, `data/processed/` | Built by the pipeline; never hand-edited |
 
 Retrosheet is the backbone; Statcast is supplementary. Any use of Retrosheet
@@ -108,3 +108,8 @@ Append-only. Newest last. Each entry: date, decision, reason, who decided.
 | 2026-11-14 | E2 pitcher term centred within pitcher-hand × batter-side | First version double-counted the platoon effect; found via calibration check | Claude |
 | 2026-11-14 | Value verdicts judged in runs per 600 full-season PA | DESIGN §3 threshold was ambiguous about which PAs | Claude |
 | 2026-11-14 | README gains a dollar conversion and a free-vs-paid reading of "small"; rates (10 runs/win, $8M/win) are external assumptions in `config.toml` `[valuation]`, table from `scripts/m09_dollar_values.py` | User asked what benchmark justifies "not worth much"; the 1-run SESOI was a convention, not cost-derived | User / Claude |
+| 2026-11-14 | Created cloud environment `player-cross-effects` allowing MLB, FanGraphs, SABR, RePEc and IZA hosts; this session switched to it | User asked for access to be obtained within each source's terms | User (approved) / Claude |
+| 2026-11-14 | MLB-hosted data (Statcast, stats API) not used | Read MLB Terms of Use: automated scripts prohibited; data notice: non-bulk, non-commercial only. One sample transactions request made before reading the clause was deleted | Claude |
+| 2026-11-14 | Literature re-reviewed from full text; README "Prior work" section added | Article hosts now reachable | Claude |
+| 2026-11-14 | Dollars per win set to $11.23M (range $6.74M–$12.84M) | Read the FanGraphs source; the earlier $8M came from a search summary and was wrong for this article | Claude |
+| 2026-11-14 | Design D run using Retrosheet-inferred absences (`m10`); result inconclusive | IL data unavailable under MLB terms; absences of ≥10 games by regulars used instead | Claude |

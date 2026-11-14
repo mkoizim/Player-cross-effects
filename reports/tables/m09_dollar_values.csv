@@ -1,12 +1,12 @@
-item,runs,runs_lo,runs_hi,wins,dollars_m,dollars_m_lo,dollars_m_hi,runs_per_win_assumed,dollars_per_win_assumed_m
-Neighbor effect on one left-handed hitter (600 PA),0.3577,0.2807,0.4348,0.0358,0.2862,0.2246,0.3478,10.0000,8.0000
-"Same, summed over a lineup with three lefties",1.0731,0.8421,1.3044,0.1073,0.8585,0.6737,1.0435,10.0000,8.0000
-"Same, summed over a lineup with four lefties",1.4308,1.1228,1.7392,0.1431,1.1446,0.8982,1.3914,10.0000,8.0000
-Gain to a right-handed hitter directly behind a lefty (600 PA),0.3894,0.3400,0.4387,0.0389,0.3115,0.2720,0.3510,10.0000,8.0000
-"One more lefty reliever in the opposing bullpen, per lefty hitter (600 PA)",0.3911,0.3371,0.4452,0.0391,0.3129,0.2697,0.3562,10.0000,8.0000
-"Pinch-hitting for a lefty vs. lefty relievers, per slot (600 PA), 2021-25",0.4791,,,0.0479,0.3833,,,10.0000,8.0000
-Increase in that pinch-hitting value since 2015-19,0.2576,,,0.0258,0.2061,,,10.0000,8.0000
-"Three lefties spread out vs. batted consecutively (team, 162 games)",4.5679,3.9802,5.1557,0.4568,3.6543,3.1842,4.1246,10.0000,8.0000
-2025 teams' actual batting order vs. a random order: smallest,0.0798,,,0.0080,0.0638,,,10.0000,8.0000
-2025 teams' actual batting order vs. a random order: median,0.8882,,,0.0888,0.7106,,,10.0000,8.0000
-2025 teams' actual batting order vs. a random order: largest,1.3813,,,0.1381,1.1050,,,10.0000,8.0000
+item,runs,runs_lo,runs_hi,wins,dollars_m,dollars_m_low_price,dollars_m_high_price,runs_per_win_assumed,dollars_per_win_assumed_m
+Neighbor effect on one left-handed hitter (600 PA),0.3577,0.2807,0.4348,0.0358,0.4017,0.2411,0.4593,10.0000,11.2300
+"Same, summed over a lineup with three lefties",1.0731,0.8421,1.3044,0.1073,1.2051,0.7233,1.3779,10.0000,11.2300
+"Same, summed over a lineup with four lefties",1.4308,1.1228,1.7392,0.1431,1.6068,0.9644,1.8371,10.0000,11.2300
+Gain to a right-handed hitter directly behind a lefty (600 PA),0.3894,0.3400,0.4387,0.0389,0.4373,0.2625,0.5000,10.0000,11.2300
+"One more lefty reliever in the opposing bullpen, per lefty hitter (600 PA)",0.3911,0.3371,0.4452,0.0391,0.4392,0.2636,0.5022,10.0000,11.2300
+"Pinch-hitting for a lefty vs. lefty relievers, per slot (600 PA), 2021-25",0.4791,,,0.0479,0.5380,0.3229,0.6152,10.0000,11.2300
+Increase in that pinch-hitting value since 2015-19,0.2576,,,0.0258,0.2893,0.1736,0.3308,10.0000,11.2300
+"Three lefties spread out vs. batted consecutively (team, 162 games)",4.5679,3.9802,5.1557,0.4568,5.1298,3.0788,5.8652,10.0000,11.2300
+2025 teams' actual batting order vs. a random order: smallest,0.0798,,,0.0080,0.0896,0.0538,0.1025,10.0000,11.2300
+2025 teams' actual batting order vs. a random order: median,0.8882,,,0.0888,0.9974,0.5986,1.1404,10.0000,11.2300
+2025 teams' actual batting order vs. a random order: largest,1.3813,,,0.1381,1.5512,0.9310,1.7736,10.0000,11.2300

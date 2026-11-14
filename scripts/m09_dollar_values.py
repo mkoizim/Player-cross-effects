@@ -41,8 +41,10 @@ rows = [
 ]
 t = pd.DataFrame(rows, columns=["item", "runs", "runs_lo", "runs_hi"])
 t["wins"] = t.runs / RPW
-for c, src in (("dollars_m", "runs"), ("dollars_m_lo", "runs_lo"), ("dollars_m_hi", "runs_hi")):
-    t[c] = t[src] / RPW * DPW / 1e6
+t["dollars_m"] = t.wins * DPW / 1e6
+# range across the published price tiers (role players to stars), at the point estimate of runs
+t["dollars_m_low_price"] = t.wins * CFG["valuation"]["dollars_per_win_low"] / 1e6
+t["dollars_m_high_price"] = t.wins * CFG["valuation"]["dollars_per_win_high"] / 1e6
 t["runs_per_win_assumed"] = RPW
 t["dollars_per_win_assumed_m"] = DPW / 1e6
 write_table(t, "m09_dollar_values")

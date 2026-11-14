@@ -4,7 +4,7 @@
 paying for.** A left-handed hitter with a lefty in one of the next two lineup
 slots is 4.7 percentage points more likely to face a left-handed reliever than
 one followed by two righties. Over a full season that costs him about a third
-of a run, or roughly $0.3 million at free-agent prices. That is worth taking
+of a run, or roughly $0.4 million at free-agent prices. That is worth taking
 when it is free (the batting order) and not worth a premium when it is not
 (an acquisition). The one lineup decision that carries a few runs is not
 batting lefties back to back, and every team already avoids it.
@@ -17,7 +17,7 @@ were examined ([`DESIGN.md`](DESIGN.md)); changes made afterwards are labelled.
 
 1. **Don't pay for "lineup balance" as protection.** The effect of neighbors
    on a lefty's matchups is real and precisely measured, and it is worth
-   0.36 runs per 600 PA (95% interval 0.28 to 0.43), about $0.3 million a
+   0.36 runs per 600 PA (95% interval 0.28 to 0.43), about $0.4 million a
    season. See [what that is worth](#what-a-third-of-a-run-is-worth) for the
    benchmark.
 2. **Do keep lefties apart in the order.** Arrangement matters more than
@@ -53,18 +53,21 @@ were examined ([`DESIGN.md`](DESIGN.md)); changes made afterwards are labelled.
 
 "Small" needs a benchmark, and the right one depends on what it costs to act.
 
-| | Runs per season | Wins | Approx. value |
-|---|---|---|---|
-| Neighbor effect on one left-handed hitter | 0.36 | 0.04 | $0.3M |
-| Same, across a lineup with three or four lefties | 1.1–1.4 | 0.11–0.14 | $0.9–1.1M |
-| Gain to a righty batting directly behind a lefty | 0.39 | 0.04 | $0.3M |
-| Pinch-hitting for a lefty against lefty relievers, per lineup slot | 0.48 | 0.05 | $0.4M |
-| A 2025 team's actual batting order vs. a random order of the same nine | 0.1–1.4 (median 0.9) | 0.01–0.14 | $0.1–1.1M |
-| Three lefties spread out vs. batted consecutively | 4.6 | 0.46 | $3.7M |
+| | Runs per season | Wins | Approx. value | Range by price tier |
+|---|---|---|---|---|
+| Neighbor effect on one left-handed hitter | 0.36 | 0.04 | $0.4M | $0.2–0.5M |
+| Same, across a lineup with three or four lefties | 1.1–1.4 | 0.11–0.14 | $1.2–1.6M | $0.7–1.8M |
+| Gain to a righty batting directly behind a lefty | 0.39 | 0.04 | $0.4M | $0.3–0.5M |
+| Pinch-hitting for a lefty against lefty relievers, per lineup slot | 0.48 | 0.05 | $0.5M | $0.3–0.6M |
+| A 2025 team's actual batting order vs. a random order of the same nine | 0.1–1.4 (median 0.9) | 0.01–0.14 | $0.1–1.6M | $0.1–1.8M |
+| Three lefties spread out vs. batted consecutively | 4.6 | 0.46 | $5.1M | $3.1–5.9M |
 
-Conversions use 10 runs per win and $8 million per win, the latter a
-[FanGraphs estimate](https://blogs.fangraphs.com/what-are-teams-paying-for-a-win-in-free-agency-2026-edition)
-of 2025–26 free-agent prices. Both are outside assumptions, set in
+Conversions use 10 runs per win and $11.2 million per win. The second is what
+2025–26 free agents were paid per projected WAR overall, per
+[FanGraphs](https://blogs.fangraphs.com/what-are-teams-paying-for-a-win-in-free-agency-2026-edition/);
+the same article puts the price at $6.7 million per win for players projected
+under 1 WAR and $12.8 million for those projected at 2 or more, which gives
+the range column. Both rates are outside assumptions, set in
 [`config.toml`](config.toml), not results of this study; the table is
 [`m09_dollar_values.csv`](reports/tables/m09_dollar_values.csv). The second
 row adds the single-hitter effect across lefties and is a rough guide; the
@@ -79,7 +82,7 @@ How to read it:
   what is at stake in getting it wrong on a given roster.
 - **Where acting costs money, it is a tiebreaker.** Preferring a right-handed
   bat over an otherwise equal left-handed one for the sake of the lefties
-  around him buys about $0.3 million per neighboring lefty per season. That
+  around him buys about $0.4 million per neighboring lefty per season. That
   is not a reason to pay a premium or to pass on the better hitter.
 - **Against the uncertainty in any hitter's projection, it disappears.** A
   season's projection for one hitter is typically off by many runs; an
@@ -109,6 +112,17 @@ specifications. Realized wOBA points the same way (−4.7 points on relief-phase
 plate appearances) but its interval includes zero, as expected: outcomes are
 too noisy to detect an effect this size, which is why the analysis measures
 deployment and values it through expected matchups.
+
+**An independent check was run and is inconclusive.** When a regular
+right-handed hitter goes missing for ten or more games (1,739 such absences,
+mostly injuries), the lefties who usually bat in front of him become 14 points
+more likely to have a lefty behind them, for reasons that have nothing to do
+with the opposing bullpen. Using only that variation, the estimated effect on
+facing a left-handed reliever is −3 points with an interval from −14 to +8,
+and on expected matchup value −3.1 points of wOBA with an interval from −9.5
+to +3.3. Both intervals contain the main estimates and contain zero. The check
+neither confirms nor contradicts the main result; it is too imprecise to do
+either.
 
 **Count does not matter.** Holding the next two slots fixed, each additional
 lefty elsewhere in the lineup changes exposure by about one point or less in
@@ -178,13 +192,48 @@ by about half a run."
 - **Expected matchup value uses prior-season talent estimates**, which
   flatter rookies and ignore within-season change. It is calibrated (slope
   near 1 against realized outcomes) but not validated against Statcast
-  expected stats; that host was not reachable from the build environment.
-- **Prior work was reviewed from search summaries only.** No published
-  estimate of the neighbor effect was found; that is weak evidence that none
-  exists.
+  expected stats.
+- **No MLB-hosted data are used.** MLB's terms of use prohibit using automated
+  scripts to collect information from its sites, and its data notice allows
+  only individual, non-commercial, non-bulk use. That rules out Statcast and
+  the official injured-list and roster feeds without written permission, so
+  absences and bullpen availability are inferred from Retrosheet.
+- **Prior work is thin on this question.** See below.
 - **Three hypotheses were added or re-specified after the descriptive
   phase**: the any-lefty contrast, pinch-hitting, and the emphasis on bullpen
   supply. They are marked in [`DESIGN.md`](DESIGN.md) §12–13.
+
+## Prior work
+
+Read in full unless noted. None estimates how the handedness of adjacent
+hitters changes a lefty's matchups, or what that is worth. That is a statement
+about what was found, not proof that nothing exists.
+
+- Ben Clemens, ["The Three Batter Minimum Rule Barely Matters"](https://blogs.fangraphs.com/the-three-batter-minimum-barely-matters/)
+  (FanGraphs, Dec 2019): counted 489 short relief stints in 2019 that the rule
+  would forbid, about one per four games, and built an upper bound on the cost
+  to teams that came out "tiny." Consistent with the small values here.
+- Craig Edwards, ["The Three Batter Minimum's Effect on Late-Game Strategy"](https://blogs.fangraphs.com/the-three-batter-minimums-effect-on-late-game-strategy/)
+  (FanGraphs, Aug 2020): in the rule's first weeks, late-inning lefty usage
+  fell 1.2 points and pinch-hitting had not changed. With five more seasons,
+  this study finds lefty usage did not stay down and pinch-hitting for lefties
+  rose substantially.
+- Craig Edwards, ["The Three Batter Minimum Rule's Biggest Dilemma"](https://blogs.fangraphs.com/the-three-batter-minimum-rules-biggest-dilemma/)
+  (FanGraphs, Mar 2020): works through the two-out case, where a lefty who
+  fails to retire his man must face the next hitter. This is the reason the
+  two-out test in this study did not separate cleanly.
+- Jake Mailhot, ["The Continued Demise of the Left-Handed Reliever"](https://blogs.fangraphs.com/the-continued-demise-of-the-left-handed-reliever/)
+  (FanGraphs, Jan 2023): left-handed relievers still throw about a quarter of
+  relief innings but face far more right-handed hitters than a decade ago.
+  Matches the usage figures here.
+- Bradbury & Drinen, ["Pigou at the Plate"](https://ideas.repec.org/a/sae/jospec/v9y2008i2p211-224.html),
+  *Journal of Sports Economics* 9(2), 2008 (abstract only): the quality of
+  the on-deck hitter has a very small negative effect on the hitter before
+  him. About quality, not handedness.
+- Papps & Bryson, ["Spillovers and Substitutability in Production"](https://docs.iza.org/dp12252.pdf),
+  IZA DP 12252, 2019: teammate spillovers from the batting order at the
+  plate-appearance level. The paper does not use handedness, platoon matchups
+  or relief substitution.
 
 ## Scorecard against the pre-registered hypotheses
 
