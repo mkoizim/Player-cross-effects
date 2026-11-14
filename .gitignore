@@ -1,0 +1,9 @@
+# Raw and derived data are never committed; rebuild via the pipeline.
+data/
+
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+.DS_Store
