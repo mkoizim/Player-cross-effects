@@ -1,35 +1,179 @@
-# Player cross-effects: lineup handedness and pitcher deployment
+# Do right-handed hitters protect the lefties around them?
 
-How much does the handedness of the hitters around a left-handed batter change
-which pitchers he faces, what is that worth, and how did the three-batter
-minimum (2020) change it?
+**Short answer: yes in how opponents use their bullpen, no in any amount worth
+paying for.** A left-handed hitter with a lefty in one of the next two lineup
+slots is 4.7 percentage points more likely to face a left-handed reliever than
+one followed by two righties. Over a full season that costs him about a third
+of a run. The one lineup decision that does carry a few runs is not batting
+lefties back to back, and every team already avoids it.
 
-**Status: work in progress.** This is not the final write-up.
+Regular seasons 2000–2025, 4.7 million plate appearances, Retrosheet
+play-by-play. Design, hypotheses and thresholds were written before the data
+were examined ([`DESIGN.md`](DESIGN.md)); changes made afterwards are labelled.
 
-| Phase | State | Read |
+## What a front office should take from this
+
+1. **Don't pay for "lineup balance" as protection.** The effect of neighbors
+   on a lefty's matchups is real and precisely measured, and it is worth
+   0.36 runs per 600 PA (95% interval 0.28 to 0.43). We set 1 run as the
+   threshold for "matters" in advance. It is inside that by a wide margin.
+2. **Do keep lefties apart in the order.** Arrangement matters more than
+   count. Three left-handed hitters spread through the order are worth about
+   4.6 runs a season more than the same three batted consecutively (interval
+   4.0 to 5.2). But this is a mistake nobody makes: in 2025 every one of the
+   30 teams' actual lineups beat a random ordering of the same nine hitters,
+   by 0.1 to 1.4 runs. There is at most a run or so left to find.
+3. **The benefit is mutual, so it is not the righty's to be credited with.**
+   A right-handed hitter batting directly behind a lefty sees left-handed
+   relievers 6.8 points more often and gains about 0.39 runs per 600 PA. The
+   lefty "creates" that as surely as the righty "protects" him. It belongs to
+   the pairing.
+4. **Who a hitter faces is worth runs, but it comes from how he is used, not
+   from who bats near him.** Across 2021–25, a left-handed regular's matchup
+   context ranges from about −2.5 to +1.7 runs a season (5th to 95th
+   percentile). Platooned lefties are at the top; everyday stars who get every
+   lefty specialist are at the bottom. The part traceable to neighbors is
+   never more than half a run. When projecting a platoon bat into an everyday
+   role, this is the adjustment to make.
+5. **A right-handed bench bat is being used more since the three-batter
+   rule.** Pinch-hitting for a lefty against a left-handed reliever rose from
+   9% of those plate appearances (2015–19) to 15% (2021–25), including for AL
+   clubs that always had the DH. The substitution is worth about half a run
+   per lineup slot per season, twice what it was.
+6. **The opposing bullpen matters more than your own batting order.** Each
+   additional left-handed reliever in the other bullpen raises a lefty's
+   exposure by 5 points — as much as the neighbor effect — and against a
+   bullpen with no lefty the neighbor effect is zero. Still small in runs
+   (about 0.4 per lefty hitter per additional lefty reliever, season-long).
+
+## The findings
+
+### Neighbors change who pitches; the value is small
+
+![Main estimate](reports/figures/m01_neighbor_effect.png)
+
+The comparison is within the same hitter, in the same season, against the same
+type of starter and the same opponent, in the same inning and game state — on
+days when the hitters behind him happen to differ. A lefty in the next two
+slots raises the chance of facing a left-handed reliever by 3.1 points in
+2015–19 and 4.7 in 2021–25. Converted through each pitcher's expected
+performance against him, that is 0.22 and 0.36 runs per 600 PA.
+
+Checks that should come out empty do: no effect in a hitter's first trip
+against the starter, none in blowouts, none against bullpens with no lefty.
+The estimate holds at 4.7 to 6.5 points across eight alternative
+specifications. Realized wOBA points the same way (−4.7 points on relief-phase
+plate appearances) but its interval includes zero, as expected: outcomes are
+too noisy to detect an effect this size, which is why the analysis measures
+deployment and values it through expected matchups.
+
+**Count does not matter.** Holding the next two slots fixed, each additional
+lefty elsewhere in the lineup changes exposure by about one point or less in
+every era, with inconsistent sign. An all-lefty lineup is not "easy to neutralize"
+because there are many lefties in it; it is exposed because the lefties are
+next to each other.
+
+### The three-batter minimum: no clear change
+
+![By season](reports/figures/m02_event_study.png)
+
+The rule ended the one-batter specialist: outings it forbids went from 10–16%
+of left-handed relief appearances to 0.2%
+([figure](reports/figures/fig01_lefty_reliever_usage.png)). The neighbor effect
+is 1.9 points larger in 2021–25 than in 2015–19. But the season-by-season
+picture shows the effect at 4–5 points through 2017, dipping in 2018–19, and
+returning to 4–6 points after 2020. A test pretending the rule arrived in 2018
+"finds" an effect too. The honest reading is that the rule coincided with the
+neighbor effect returning to its long-run level, and this study cannot show
+the rule raised it. The test we committed to in advance — the effect should
+grow less with two outs, where a reliever can escape by ending the inning —
+gives one supportive result and one contrary result. A comparison chosen after
+seeing the data (mid-inning pitching changes versus inning-start changes) does
+show the expected pattern, and should be treated as a lead, not a finding.
+
+### What each nearby lefty does
+
+![Neighbor coefficients](reports/figures/m07_neighbor_coefficients.png)
+
+For a left-handed hitter, a lefty immediately before or after costs about
+2.5–3 points of expected wOBA in relief-phase plate appearances; a lefty two
+slots away, about half that. For a right-handed hitter the same neighbors are
+a gain. Switch hitters are unaffected, and neither help nor hurt as neighbors
+beyond counting as right-handed.
+
+### Credit
+
+There is no player-level "protection" number that travels with a hitter. The
+value depends on which lineup he joins and whom he displaces. What can be
+computed is the change in the *other eight* hitters' expected matchups from a
+specific change to a specific lineup
+([examples](reports/tables/m07_marginal_examples.csv)): in a lineup with
+lefties batting first, third and sixth, replacing the right-handed #2 hitter
+with a lefty costs the rest of the lineup about 3 runs a season; replacing the
+#3 lefty with a righty changes nothing.
+
+For those who want a per-player table anyway, a Shapley split of each 2025
+starting lineup's spillover is in
+[`m07_shapley_credit_2025.csv`](reports/tables/m07_shapley_credit_2025.csv).
+It is an accounting convention. It ranges from −1.0 to +0.7 runs per 150
+starts, and in practice says only "right-handed hitters are on the plus side,
+by about half a run."
+
+## What this study cannot tell you
+
+- **It measures the current equilibrium.** If many teams stacked lefties,
+  opponents would carry more left-handed relievers. These estimates describe
+  one team changing its lineup, not the league changing.
+- **Consecutive lefties are rare in the data** (3–5% of lefties have two
+  behind them), so the cost of a three-lefty block is partly extrapolated
+  from an additive model.
+- **The lineup value function is a statistical summary, not a model of the
+  opposing manager.** The design called for a decision model; the simpler
+  version was used because the effects turned out small and nearly additive.
+- **Bullpen supply is inferred** from who pitched in relief in the prior 14
+  days, not from roster status.
+- **Expected matchup value uses prior-season talent estimates**, which
+  flatter rookies and ignore within-season change. It is calibrated (slope
+  near 1 against realized outcomes) but not validated against Statcast
+  expected stats; that host was not reachable from the build environment.
+- **Prior work was reviewed from search summaries only.** No published
+  estimate of the neighbor effect was found; that is weak evidence that none
+  exists.
+- **Three hypotheses were added or re-specified after the descriptive
+  phase**: the any-lefty contrast, pinch-hitting, and the emphasis on bullpen
+  supply. They are marked in [`DESIGN.md`](DESIGN.md) §12–13.
+
+## Scorecard against the pre-registered hypotheses
+
+| | Hypothesis | Result |
 |---|---|---|
-| 1. Design | approved | [`DESIGN.md`](DESIGN.md) |
-| 2. Data pipeline and descriptive analysis | complete, under review | [`reports/phase2_descriptives.md`](reports/phase2_descriptives.md) |
-| 3. Modeling, credit allocation, final write-up | not started | — |
+| H1 | Right-handed neighbors reduce a lefty's exposure to left-handed relievers, and it is worth ≥ 1 run per 600 PA | Exposure: **yes** (+4.7 pp). Value: **no** (0.36 runs) |
+| H2 | The number of lefties elsewhere in the lineup matters | **No.** About 1 pp or less per lefty, sign inconsistent |
+| H3 | Arrangement matters beyond count | **Yes** against a blocked lineup (4.6 runs for three lefties); under 1.5 runs against lineups teams actually use |
+| H4 | The three-batter minimum amplified the effect | **Not shown.** Difference exists but fails the placebo-date test |
+| H5 | The effect scales with opposing lefty relievers | **On/off, not graded.** Zero with none; similar with one through four |
+| H6 | Right-handed hitters behind lefties benefit | **Yes** in exposure (+6.8 pp); 0.39 runs, below threshold |
+| H7 | Lefty-heavy teams draw more left-handed starters | **Small yes**: +1.2 pp of starts per additional regular lefty |
+| H8* | Pinch-hitting for lefties rose after the rule | **Yes** (+5 pp), timing gradual, cause not isolated |
 
-Nothing in the repository so far is a causal estimate. The Phase 2 report
-contains raw rates only.
+\* added after the descriptive phase.
 
 ## Reproduce
 
-Requires `git`, `uv`, a C toolchain (`gcc`, `make`, `autoconf`, `automake`,
-`libtool`) and network access to github.com.
+Requires `git`, [`uv`](https://docs.astral.sh/uv/), a C toolchain (`gcc`,
+`make`, `autoconf`, `automake`, `libtool`) and network access to github.com.
 
 ```
-make data       # clone pinned Retrosheet data, build Chadwick tools, parse, derive
-make describe   # write every table and figure under reports/
+make data       # clone pinned Retrosheet data, build Chadwick tools, parse, derive, talent estimates
+make describe   # descriptive tables and figures (scripts/tab*, scripts/fig*)
+make models     # models, lineup value, credit (scripts/m*)
 make test
 ```
 
 Inputs are pinned by commit in [`config.toml`](config.toml). Raw and derived
-data are written under `data/` and are not committed. Each file in
-`reports/figures/` and `reports/tables/` is produced by the script of the same
-name in `scripts/`.
+data are written under `data/` and not committed. Files in `reports/` are
+produced by scripts in `scripts/` whose names share their prefix. Descriptive
+findings: [`reports/phase2_descriptives.md`](reports/phase2_descriptives.md).
 
 ## Data
 

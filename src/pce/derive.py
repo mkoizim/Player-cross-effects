@@ -252,6 +252,10 @@ def build_appearances(pa: pd.DataFrame) -> pd.DataFrame:
     # An outing the three-batter minimum would not allow absent injury: fewer than three
     # batters, not ending a half-inning, not the end of the game.
     ap["short_stint"] = (ap.bf < 3) & ~ap.exit_ended_inning & ~ap.finished_game
+    # Opener: a short start by someone who usually relieves (definition in config.toml).
+    ap["start_share"] = ap.groupby(["season", "pit_id"]).is_starter.transform("mean")
+    ap["opener"] = (ap.is_starter & (ap.bf <= DEFS["opener_max_bf"])
+                    & (ap.start_share < DEFS["opener_max_start_share"]))
     return ap.drop(columns="last_pit")
 
 
@@ -286,7 +290,7 @@ def build_bullpen(ap: pd.DataFrame) -> pd.DataFrame:
     return pd.concat(out, ignore_index=True)
 
 
-def build_team_game(games, lu, players, bullpen) -> pd.DataFrame:
+def build_team_game(games, lu, players, bullpen, ap) -> pd.DataFrame:
     tm = _type_matrix(lu)
     tg = pd.DataFrame({
         "lineup_types": tm.apply(lambda r: "".join(r.fillna("?")), axis=1),
@@ -305,6 +309,15 @@ def build_team_game(games, lu, players, bullpen) -> pd.DataFrame:
     thr = players[["season", "player_id", "throws"]].rename(
         columns={"player_id": "opp_starter_id", "throws": "opp_starter_throws"})
     tg = tg.merge(thr, on=["season", "opp_starter_id"], how="left")
+    # De facto starter: behind an opener, the pitcher who faced the most batters.
+    op = ap[ap.opener][["game_id", "fld_team"]].assign(opp_opener=True)
+    bulk = (ap.sort_values("bf", ascending=False).drop_duplicates(["game_id", "fld_team"])
+            [["game_id", "fld_team", "throws"]].rename(columns={"throws": "bulk_throws"}))
+    tg = tg.merge(op.merge(bulk, on=["game_id", "fld_team"]).rename(columns={"fld_team": "opp"}),
+                  on=["game_id", "opp"], how="left")
+    tg["opp_opener"] = tg.opp_opener.notna()
+    tg["opp_defacto_throws"] = np.where(tg.opp_opener, tg.bulk_throws, tg.opp_starter_throws)
+    tg = tg.drop(columns="bulk_throws")
     bp = bullpen.rename(columns={"team": "opp"}).add_prefix("opp_").rename(
         columns={"opp_opp": "opp", "opp_date": "date", "opp_season": "season"})
     tg = tg.merge(bp, on=["season", "opp", "date"], how="left")
@@ -334,7 +347,7 @@ def main() -> None:
     ap.to_parquet(PROCESSED / "appearances.parquet", index=False)
 
     bullpen = build_bullpen(ap)
-    tg = build_team_game(games, lu, players, bullpen)
+    tg = build_team_game(games, lu, players, bullpen, ap)
     tg.to_parquet(PROCESSED / "team_game.parquet", index=False)
 
     opp = tg[["game_id", "team", "opp_starter_throws", "opp_pen_lhp", "opp_pen_lhp_rested",

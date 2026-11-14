@@ -20,9 +20,8 @@ Final deliverable is `README.md`, written for an MLB front-office reader.
 | 2 | Reproducible data pipeline + descriptive analysis only | **STOP** for user review before any modeling |
 | 3 | Modeling, credit allocation, README write-up | Final review |
 
-- **Current phase: 2 complete — awaiting review of `reports/phase2_descriptives.md`.
-  Phase 3 (modeling) has NOT been approved.** Update this line when a phase is
-  approved.
+- **Current phase: 3 complete — README is the final write-up, awaiting final
+  review.** Phase 3 approved by user 2026-11-14.
 - Never begin the next phase without explicit user approval in the
   conversation.
 - "Descriptive" in Phase 2 means counts, rates, cross-tabs, and plots of
@@ -52,11 +51,13 @@ parties may contact Retrosheet at www.retrosheet.org."
 
 ```
 make data       # fetch pinned inputs, build Chadwick, parse, derive  (~3 min after clone)
-make describe   # regenerate every table and figure in reports/
+make describe   # descriptive tables and figures (scripts/tab*, scripts/fig*)
+make models     # Phase 3 models, lineup value, credit (scripts/m*)
 make test       # checks, incl. PA totals vs Retrosheet game logs by team-season
 ```
 
-Code: `src/pce/` (`fetch`, `parse`, `derive`, `describe` helpers); one script
+Code: `src/pce/` (`fetch`, `parse`, `derive`, `talent`, `describe` helpers,
+`model` = analysis frame and fixed-effects fits, `lineup` = value function and Shapley); one script
 per output in `scripts/`; pins and definitions in `config.toml`. Handedness
 types are L / R / S (switch) / P (pitcher batting); "RR", "anyL" etc. describe
 the next two lineup slots with S counted as R.
@@ -99,4 +100,10 @@ Append-only. Newest last. Each entry: date, decision, reason, who decided.
 | 2026-11-14 | Bullpen supply = distinct relievers used by the team in the trailing 14 days, game day excluded | No roster-status data in Retrosheet; limits listed in phase2 report §5 | Claude |
 | 2026-11-14 | `talent` table deferred to Phase 3 | Shrinkage estimates are a model; Phase 2 gate forbids models | Claude |
 | 2026-11-14 | Statcast ingestion deferred | Savant host blocked; only needed for Phase 3 xwOBA check | Claude |
-| 2026-11-14 | Proposed, **pending user approval** (post-data, see DESIGN §12.4): RR-vs-anyL as primary contrast; mid-inning contrast as exploratory addition to H4; pinch-hitting response as H8; opener = starter with <10 BF | Raised by Phase 2 descriptives | Claude |
+| 2026-11-14 | Proposed (post-data, see DESIGN §12.4; **approved by user 2026-11-14** except opener, see below): RR-vs-anyL as primary contrast; mid-inning contrast as exploratory addition to H4; pinch-hitting response as H8; opener = starter with <10 BF | Raised by Phase 2 descriptives | Claude |
+| 2026-11-14 | Phase 2 approved; Phase 3 to proceed. Broaden: bullpen supply and pinch-hitting (H8) added; RR-vs-anyL primary; two-out test kept as pre-specified, mid-inning contrast exploratory | User message | User |
+| 2026-11-14 | Opener = start of ≤10 batters by a pitcher who starts in <50% of his appearances that season; bulk pitcher is de facto starter (H7 only) | User's definition, replacing the proposed <10 BF rule; 50% cut-off is Claude's reading of "usually don't start" | User / Claude |
+| 2026-11-14 | Statcast not used; no environment change requested | Only an optional xwOBA check; Retrosheet wOBA serves as E3 | Claude |
+| 2026-11-14 | Design C implemented as a reduced-form lineup value function, not a manager decision model; Design D not run | Effects small and near-additive; recorded as deviations in DESIGN §13.3 | Claude |
+| 2026-11-14 | E2 pitcher term centred within pitcher-hand × batter-side | First version double-counted the platoon effect; found via calibration check | Claude |
+| 2026-11-14 | Value verdicts judged in runs per 600 full-season PA | DESIGN §3 threshold was ambiguous about which PAs | Claude |

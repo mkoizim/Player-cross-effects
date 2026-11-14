@@ -1,0 +1,13 @@
+outcome,era,term,coef,se,lo,hi,p,n,coef_runs_per_600,lo_runs_per_600,hi_runs_per_600,verdict_per_additional_lefty
+vs_lhp,2000–14,n_L_else,0.0106,0.0019,0.0069,0.0142,0.0000,225610,,,,inside ±SESOI: no effect of practical size
+e2,2000–14,n_L_else,-0.0005,0.0001,-0.0007,-0.0003,0.0000,225610,-0.0878,-0.1206,-0.0550,inside ±SESOI: no effect of practical size
+e2_starter,2000–14,n_L_else,-0.0005,0.0001,-0.0007,-0.0003,0.0000,225610,-0.0838,-0.1152,-0.0524,inside ±SESOI: no effect of practical size
+woba,2000–14,n_L_else,0.0002,0.0017,-0.0032,0.0036,0.9014,220498,0.0352,-0.5214,0.5917,inside ±SESOI: no effect of practical size
+vs_lhp,2015–19,n_L_else,-0.0014,0.0030,-0.0073,0.0044,0.6373,82151,,,,inside ±SESOI: no effect of practical size
+e2,2015–19,n_L_else,-0.0001,0.0002,-0.0004,0.0002,0.6037,82107,-0.0154,-0.0737,0.0429,inside ±SESOI: no effect of practical size
+e2_starter,2015–19,n_L_else,-0.0001,0.0002,-0.0004,0.0002,0.6525,82107,-0.0130,-0.0695,0.0436,inside ±SESOI: no effect of practical size
+woba,2015–19,n_L_else,-0.0026,0.0027,-0.0078,0.0027,0.3433,80913,-0.4767,-1.4627,0.5093,inconclusive
+vs_lhp,2021–25,n_L_else,-0.0085,0.0024,-0.0132,-0.0038,0.0004,120222,,,,inside ±SESOI: no effect of practical size
+e2,2021–25,n_L_else,0.0004,0.0001,0.0001,0.0006,0.0025,120222,0.0810,0.0284,0.1336,inside ±SESOI: no effect of practical size
+e2_starter,2021–25,n_L_else,0.0005,0.0001,0.0002,0.0007,0.0004,120222,0.0954,0.0428,0.1480,inside ±SESOI: no effect of practical size
+woba,2021–25,n_L_else,-0.0038,0.0021,-0.0079,0.0002,0.0618,118821,-0.7888,-1.6167,0.0391,inconclusive

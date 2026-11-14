@@ -1,0 +1,5 @@
+outcome,sample,term,coef,se,lo,hi,p,n
+vs_lhp,"2015–25, hitters with 300+ prior PA",anyL,0.0418,0.0040,0.0340,0.0496,0.0000,154270
+vs_lhp,"2015–25, hitters with 300+ prior PA",anyL_big,-0.0049,0.0056,-0.0158,0.0060,0.3766,154270
+e2,"2015–25, hitters with 300+ prior PA",anyL,-0.0018,0.0002,-0.0023,-0.0014,0.0000,154232
+e2,"2015–25, hitters with 300+ prior PA",anyL_big,0.0007,0.0003,0.0001,0.0014,0.0180,154232

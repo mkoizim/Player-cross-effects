@@ -1,0 +1,4 @@
+bats,hitter_seasons,sd_context_runs,p05,p95,sd_neighbor_runs,max_abs_neighbor_runs
+L,468,1.2543,-2.5337,1.7261,0.1337,0.5201
+R,762,0.7371,-1.4860,0.9731,0.0994,0.3417
+S,160,0.4302,-0.6212,0.7873,0.0142,0.0485

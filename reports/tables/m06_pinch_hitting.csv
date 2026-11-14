@@ -1,0 +1,13 @@
+sample,outcome,term,coef,se,lo,hi,p,n
+all games,starter replaced,lhp,0.0396,0.0018,0.0361,0.0431,0.0000,234416
+all games,starter replaced,lhp_post,0.0592,0.0025,0.0543,0.0642,0.0000,234416
+DH games only,starter replaced,lhp,0.0534,0.0025,0.0484,0.0583,0.0000,167889
+DH games only,starter replaced,lhp_post,0.0507,0.0032,0.0445,0.0569,0.0000,167889
+DH games only,starter replaced,lhp,0.0534,0.0025,0.0484,0.0584,0.0000,167889
+DH games only,starter replaced,lhp_2021,0.0145,0.0062,0.0023,0.0267,0.0196,167889
+DH games only,starter replaced,lhp_2022on,0.0546,0.0032,0.0482,0.0609,0.0000,167889
+DH games only,expected wOBA gained by substitution (slot),lhp,0.0055,0.0001,0.0052,0.0058,0.0000,167847
+DH games only,expected wOBA gained by substitution (slot),lhp_post,0.0034,0.0002,0.0031,0.0038,0.0000,167847
+"AL clubs, DH games",starter replaced,lhp,0.0539,0.0027,0.0487,0.0591,0.0000,109311
+"AL clubs, DH games",starter replaced,lhp_2021,0.0134,0.0065,0.0006,0.0263,0.0401,109311
+"AL clubs, DH games",starter replaced,lhp_2022on,0.0636,0.0040,0.0556,0.0715,0.0000,109311

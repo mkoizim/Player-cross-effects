@@ -1,0 +1,33 @@
+outcome,era,spec,term,coef,se,lo,hi,p,n
+vs_lhp,2015–19,primary,anyL,0.0308,0.0041,0.0227,0.0389,0.0000,82151
+e2,2015–19,primary,anyL,-0.0012,0.0002,-0.0016,-0.0007,0.0000,82107
+vs_lhp,2015–19,cluster by batting team-season,anyL,0.0308,0.0049,0.0210,0.0405,0.0000,82151
+e2,2015–19,cluster by batting team-season,anyL,-0.0012,0.0003,-0.0017,-0.0006,0.0000,82107
+vs_lhp,2015–19,neighbors as currently in game,anyL_c,0.0386,0.0041,0.0306,0.0466,0.0000,82151
+e2,2015–19,neighbors as currently in game,anyL_c,-0.0014,0.0002,-0.0019,-0.0010,0.0000,82107
+vs_lhp,2015–19,no continuous controls,anyL,0.0313,0.0039,0.0237,0.0389,0.0000,82151
+e2,2015–19,no continuous controls,anyL,-0.0011,0.0002,-0.0016,-0.0007,0.0000,82107
+vs_lhp,2015–19,batter-season and opponent FE only,anyL,0.0449,0.0038,0.0375,0.0523,0.0000,82195
+e2,2015–19,batter-season and opponent FE only,anyL,-0.0016,0.0002,-0.0021,-0.0012,0.0000,82151
+vs_lhp,2015–19,innings 6-8,anyL,0.0462,0.0053,0.0358,0.0565,0.0000,50860
+e2,2015–19,innings 6-8,anyL,-0.0017,0.0003,-0.0022,-0.0011,0.0000,50837
+vs_lhp,2015–19,within 3 runs,anyL,0.0348,0.0051,0.0247,0.0449,0.0000,51710
+e2,2015–19,within 3 runs,anyL,-0.0012,0.0003,-0.0017,-0.0006,0.0000,51679
+vs_lhp,2015–19,vs right-handed starters only,anyL,0.0301,0.0045,0.0212,0.0390,0.0000,66858
+e2,2015–19,vs right-handed starters only,anyL,-0.0010,0.0003,-0.0015,-0.0005,0.0001,66827
+vs_lhp,2021–25,primary,anyL,0.0472,0.0034,0.0406,0.0537,0.0000,120222
+e2,2021–25,primary,anyL,-0.0017,0.0002,-0.0021,-0.0014,0.0000,120222
+vs_lhp,2021–25,cluster by batting team-season,anyL,0.0472,0.0036,0.0401,0.0543,0.0000,120222
+e2,2021–25,cluster by batting team-season,anyL,-0.0017,0.0002,-0.0022,-0.0013,0.0000,120222
+vs_lhp,2021–25,neighbors as currently in game,anyL_c,0.0626,0.0033,0.0561,0.0690,0.0000,120222
+e2,2021–25,neighbors as currently in game,anyL_c,-0.0021,0.0002,-0.0024,-0.0017,0.0000,120222
+vs_lhp,2021–25,no continuous controls,anyL,0.0493,0.0032,0.0431,0.0555,0.0000,120222
+e2,2021–25,no continuous controls,anyL,-0.0018,0.0002,-0.0022,-0.0015,0.0000,120222
+vs_lhp,2021–25,batter-season and opponent FE only,anyL,0.0624,0.0031,0.0564,0.0684,0.0000,120267
+e2,2021–25,batter-season and opponent FE only,anyL,-0.0023,0.0002,-0.0027,-0.0020,0.0000,120267
+vs_lhp,2021–25,innings 6-8,anyL,0.0646,0.0043,0.0562,0.0729,0.0000,76835
+e2,2021–25,innings 6-8,anyL,-0.0022,0.0002,-0.0026,-0.0017,0.0000,76835
+vs_lhp,2021–25,within 3 runs,anyL,0.0613,0.0040,0.0534,0.0692,0.0000,78095
+e2,2021–25,within 3 runs,anyL,-0.0020,0.0002,-0.0025,-0.0016,0.0000,78095
+vs_lhp,2021–25,vs right-handed starters only,anyL,0.0558,0.0037,0.0486,0.0630,0.0000,98477
+e2,2021–25,vs right-handed starters only,anyL,-0.0022,0.0002,-0.0026,-0.0018,0.0000,98477

@@ -78,3 +78,33 @@ def test_three_batter_rule_visible_in_data():
     r = ap[~ap.is_starter & ~ap.position_player].groupby("season").short_stint.mean()
     assert r[r.index <= 2019].min() > 0.03
     assert r[r.index >= 2021].max() < 0.005
+
+
+def test_talent_uses_prior_seasons_only():
+    """A player with no earlier season in the data must sit exactly at his group mean."""
+    t = pd.read_parquet(PROCESSED / "talent_bat.parquet")
+    first = t[t.season == t.season.min()]
+    assert (first.prior_n == 0).all()
+    assert (first.groupby("grp").overall.nunique() == 1).all()
+
+
+def test_expected_matchup_value_is_calibrated(pa):
+    e = pd.read_parquet(PROCESSED / "pa_e2.parquet")
+    d = pa.merge(e, on=["season", "game_id", "event_id"])
+    d = d[(d.season >= 2003) & (d.woba_den == 1)]
+    dec = d.groupby(pd.qcut(d.e2, 10, labels=False)).agg(e2=("e2", "mean"), y=("woba_num", "mean"))
+    slope = np.polyfit(dec.e2, dec.y, 1)[0]
+    assert 0.85 < slope < 1.1
+
+
+def test_shapley_is_efficient_and_null_lineup_is_zero():
+    from pce.lineup import TERMS, onehot, loadings, shapley, spillover
+    rng = np.random.default_rng(0)
+    beta = pd.Series(rng.normal(size=len(TERMS)), index=TERMS)
+    w = np.linspace(0.9, 1.1, 9)
+    q = np.array([0.35, 0.55, 0.10])
+    assert spillover("RRRRRRRRR", beta, w) == 0
+    for types in ("LRLRSLRRL", "LLLRRRSRR"):
+        phi = shapley(types, beta, w, q)
+        empty = float(loadings(np.tile(q, (9, 1)), np.full(9, q[0]), w) @ beta.to_numpy())
+        assert np.isclose(phi.sum(), spillover(types, beta, w) - empty)

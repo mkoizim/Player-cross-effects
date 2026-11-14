@@ -1,0 +1,5 @@
+outcome,control,term,coef,se,lo,hi,p,n
+e2,NC1 first time through vs. starter,anyL,0.0002,0.0001,0.0000,0.0004,0.0343,117838
+woba,NC1 first time through vs. starter,anyL,0.0024,0.0037,-0.0049,0.0097,0.5156,117556
+vs_lhp,"NC4 blowouts (7+ runs, inning 7+)",anyL,-0.0038,0.0087,-0.0208,0.0132,0.6630,16014
+e2,"NC4 blowouts (7+ runs, inning 7+)",anyL,-0.0005,0.0005,-0.0015,0.0005,0.3501,16014

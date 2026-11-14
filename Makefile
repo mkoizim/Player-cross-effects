@@ -1,9 +1,9 @@
 # Everything is rebuilt from pinned inputs. Raw and derived data live in data/ (gitignored).
 PY = uv run python
 
-.PHONY: all setup fetch parse derive data describe test clean
+.PHONY: all setup fetch parse derive data describe models test clean
 
-all: data describe test
+all: data describe models test
 
 setup:
 	uv sync
@@ -16,11 +16,15 @@ parse: fetch            ## Retrosheet event files -> data/interim/*.parquet
 
 derive: parse           ## derived tables -> data/processed/*.parquet
 	$(PY) -m pce.derive
+	$(PY) -m pce.talent
 
 data: derive
 
 describe:               ## every figure and table in reports/
 	@for s in scripts/tab*.py scripts/fig*.py; do echo "== $$s"; $(PY) $$s || exit 1; done
+
+models:                 ## Phase 3 models, lineup value, credit allocation
+	@for s in scripts/m*.py; do echo "== $$s"; $(PY) $$s || exit 1; done
 
 test:
 	uv run pytest -q

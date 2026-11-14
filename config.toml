@@ -19,3 +19,12 @@ bullpen_window_days = 14
 # A player who starts at pitcher but has at least this many PA in the season
 # is treated as a hitter (two-way players), not as a pitcher batting.
 two_way_min_pa = 150
+# Opener (user decision 2026-11-14): a start of at most this many batters by a pitcher who
+# starts in fewer than this share of his appearances that season. The pitcher with the most
+# batters faced in that game is then the de facto starter (used for H7 only).
+opener_max_bf = 10
+opener_max_start_share = 0.5
+
+[talent]
+# Prior-season weights (most recent first) for expected-matchup talent estimates.
+season_weights = [5, 4, 3]

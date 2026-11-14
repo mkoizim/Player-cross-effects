@@ -1,0 +1,25 @@
+outcome,era,term,coef,se,lo,hi,p,n,coef_runs_per_600,lo_runs_per_600,hi_runs_per_600,verdict
+vs_lhp,2000–14,prev1L,0.0723,0.0018,0.0688,0.0759,0.0000,353095,,,,beyond SESOI
+vs_lhp,2000–14,prev2L,0.0240,0.0017,0.0207,0.0274,0.0000,353095,,,,beyond SESOI
+e2,2000–14,prev1L,0.0019,0.0001,0.0017,0.0021,0.0000,353095,0.3157,0.2823,0.3492,inside ±SESOI: no effect of practical size
+e2,2000–14,prev2L,0.0006,0.0001,0.0004,0.0008,0.0000,353095,0.1021,0.0702,0.1340,inside ±SESOI: no effect of practical size
+e2_starter,2000–14,prev1L,0.0021,0.0001,0.0020,0.0023,0.0000,353095,0.3577,0.3289,0.3865,inside ±SESOI: no effect of practical size
+e2_starter,2000–14,prev2L,0.0007,0.0001,0.0005,0.0008,0.0000,353095,0.1144,0.0877,0.1412,inside ±SESOI: no effect of practical size
+woba,2000–14,prev1L,0.0022,0.0024,-0.0026,0.0070,0.3690,347196,0.3648,-0.4310,1.1605,inconclusive
+woba,2000–14,prev2L,-0.0007,0.0024,-0.0055,0.0040,0.7690,347196,-0.1186,-0.9099,0.6727,inside ±SESOI: no effect of practical size
+vs_lhp,2015–19,prev1L,0.0606,0.0031,0.0544,0.0667,0.0000,142347,,,,beyond SESOI
+vs_lhp,2015–19,prev2L,0.0165,0.0029,0.0109,0.0221,0.0000,142347,,,,nonzero; cannot rule SESOI in or out
+e2,2015–19,prev1L,0.0018,0.0002,0.0015,0.0021,0.0000,142292,0.3433,0.2838,0.4029,inside ±SESOI: no effect of practical size
+e2,2015–19,prev2L,0.0004,0.0002,0.0001,0.0007,0.0128,142292,0.0724,0.0154,0.1293,inside ±SESOI: no effect of practical size
+e2_starter,2015–19,prev1L,0.0020,0.0001,0.0017,0.0023,0.0000,142292,0.3728,0.3195,0.4260,inside ±SESOI: no effect of practical size
+e2_starter,2015–19,prev2L,0.0005,0.0001,0.0002,0.0008,0.0002,142292,0.0959,0.0461,0.1456,inside ±SESOI: no effect of practical size
+woba,2015–19,prev1L,0.0044,0.0037,-0.0028,0.0117,0.2314,140859,0.8348,-0.5324,2.2021,inconclusive
+woba,2015–19,prev2L,0.0064,0.0038,-0.0010,0.0139,0.0919,140859,1.2117,-0.1975,2.6208,inconclusive
+vs_lhp,2021–25,prev1L,0.0679,0.0027,0.0625,0.0733,0.0000,199398,,,,beyond SESOI
+vs_lhp,2021–25,prev2L,0.0196,0.0025,0.0147,0.0245,0.0000,199398,,,,nonzero; cannot rule SESOI in or out
+e2,2021–25,prev1L,0.0019,0.0001,0.0016,0.0021,0.0000,199398,0.3894,0.3400,0.4387,inside ±SESOI: no effect of practical size
+e2,2021–25,prev2L,0.0004,0.0001,0.0002,0.0006,0.0004,199398,0.0838,0.0375,0.1301,inside ±SESOI: no effect of practical size
+e2_starter,2021–25,prev1L,0.0021,0.0001,0.0019,0.0023,0.0000,199398,0.4283,0.3827,0.4739,inside ±SESOI: no effect of practical size
+e2_starter,2021–25,prev2L,0.0006,0.0001,0.0004,0.0008,0.0000,199398,0.1206,0.0789,0.1622,inside ±SESOI: no effect of practical size
+woba,2021–25,prev1L,0.0073,0.0029,0.0016,0.0130,0.0123,197797,1.5088,0.3282,2.6893,nonzero; cannot rule SESOI in or out
+woba,2021–25,prev2L,0.0052,0.0030,-0.0006,0.0110,0.0796,197797,1.0731,-0.1269,2.2730,inconclusive

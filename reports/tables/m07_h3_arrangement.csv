@@ -1,0 +1,9 @@
+lefties,contrast,lineup_a,lineup_b,runs_per_162,se,lo,hi,threshold_runs,verdict
+2,best vs worst arrangement,RRRRRLRRL,RRRRRRLLR,2.0317,0.1376,1.7621,2.3013,2.0000,nonzero; cannot rule SESOI in or out
+2,spread out vs one block,LRRRLRRRR,LLRRRRRRR,1.9981,0.1351,1.7334,2.2628,2.0000,nonzero; cannot rule SESOI in or out
+3,best vs worst arrangement,RRLRRLRRL,RRRRRLLLR,4.6523,0.3054,4.0537,5.2509,3.0000,beyond SESOI
+3,spread out vs one block,LRRLRRLRR,LLLRRRRRR,4.5679,0.2999,3.9802,5.1557,3.0000,beyond SESOI
+4,best vs worst arrangement,RLRLRLRRL,RRRRRLLLL,4.9435,0.4027,4.1543,5.7327,4.0000,beyond SESOI
+4,spread out vs one block,LRLRLRRLR,LLLLRRRRR,4.8027,0.3941,4.0302,5.5751,4.0000,beyond SESOI
+5,best vs worst arrangement,RLLRLRLRL,RRRRLLLLL,4.7918,0.4806,3.8498,5.7338,5.0000,nonzero; cannot rule SESOI in or out
+5,spread out vs one block,LRLRLLRLR,LLLLLRRRR,4.5886,0.4688,3.6697,5.5075,5.0000,nonzero; cannot rule SESOI in or out

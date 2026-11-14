@@ -1,7 +1,6 @@
 # DESIGN — Player cross-effects: the handedness-mix externality
 
-Status: **Phase 1 approved 2026-11-14. Phase 2 (pipeline + descriptives) complete,
-awaiting review.** Sections 1–11 are the pre-specified design and are left as
+Status: **All three phases complete; final review pending.** Sections 1–11 are the pre-specified design and are left as
 written, including numbers marked *(prior)*. Measured replacements for those
 priors, the user's decisions, and the issues Phase 2 raised are in §12. Where
 §12 and an earlier section disagree on a number, §12 is the measured one.
@@ -523,3 +522,56 @@ you approve it as a design change:
   network policy. Needed only for the Phase 3 xwOBA check.
 - Literature search done from search summaries only; article hosts are
   blocked, so full texts were not read.
+
+---
+
+## 13. Phase 3 record (2026-11-14)
+
+### 13.1 Decisions on §12.4 (user, 2026-11-14)
+
+Approved: broaden to include bullpen supply and pinch-hitting (H8); two-out
+triple difference stays the pre-specified H4 test with the mid-inning contrast
+added as exploratory; RR-vs-anyL as primary contrast. Opener definition
+changed by the user: a start of at most 10 batters by a pitcher who starts in
+under half his appearances that season; the pitcher with the most batters
+faced is the de facto starter (H7 only).
+
+### 13.2 Verdicts (tables in `reports/tables/m0*.csv`)
+
+| ID | Verdict against §3 | Key numbers (2021–25 unless noted) |
+|---|---|---|
+| H1 | E1 holds; value falsified ("exposure changes but it does not matter") | +4.7 pp [4.1, 5.4]; −0.36 runs/600 PA [−0.43, −0.28] |
+| H2 | Falsified both ways: count irrelevant given arrangement | −0.9 pp per additional lefty elsewhere; +1.1 in 2000–14; 0 in 2015–19 |
+| H3 | Holds vs. a blocked lineup; under threshold vs. realistic lineups | 3 lefties spread vs block: 4.6 runs [4.0, 5.2]; teams' actual vs random order: 0.1–1.4 |
+| H4 | Not established | DiD +1.9 pp [0.9, 2.8]; placebo 2018: −2.6 pp (fails); outs triple difference +1.8 pp at PA level, −2.5 pp (n.s.) at entry level; exploratory mid-inning +5.5 pp |
+| H5 | On/off only | zero-supply effect 0.1 pp; 4–5 pp at every level from 1 to 4+ |
+| H6 | E1 holds; value under threshold | +6.8 pp [6.3, 7.3]; +0.39 runs/600 PA |
+| H7 | Small positive; cannot rule 1 pp in or out | +1.2 pp LHP-start share per regular lefty [0.7, 1.7] |
+| H8 (post-data) | Holds; cause not isolated | +5.1 pp in DH games; AL-club gap 3.4 pp (2019), 6.2 (2021), 10–11 (2023–25) |
+
+Negative controls: NC1 +0.0002 wOBA (statistically nonzero, one-eighth of the
+main effect); NC2 and NC4 null; NC3 fails for 2018, which is the reason H4 is
+not established.
+
+### 13.3 Deviations from the design
+
+- **Design C replaced by a reduced-form lineup value function**
+  (`src/pce/lineup.py`): additive neighbor effects by own handedness with one
+  interaction, not a model of the pitching-change decision. Chosen because
+  effects were small and close to additive; it cannot answer questions about
+  opponent behavior out of sample.
+- **Design D (injury design) not run.** A–C agreed, and the effect is small.
+- **Statcast xwOBA check not run** (host unreachable). E3 uses Retrosheet
+  wOBA only.
+- **Verdicts on value use runs per 600 PA of a full season**, i.e. the
+  relief-phase wOBA effect scaled by the relief share of PAs. §3 states the
+  threshold as 0.002 wOBA without saying on which PAs; full-season is the
+  reading consistent with "1 run per 600 PA."
+- **Talent estimates**: empirical-Bayes shrinkage of overall wOBA and platoon
+  split from the prior three seasons (weights 5/4/3). The method-of-moments
+  variance for right-handed hitters' splits came out at zero, so all of them
+  carry the group-average split.
+- **E2 construction fixed during Phase 3**: the first version added batter
+  and pitcher hand-specific talent and so counted the platoon effect twice
+  (hand gap 56 points vs 35 realized). The pitcher now enters as a deviation
+  from the average pitcher of his hand. Calibration slope is 0.97.

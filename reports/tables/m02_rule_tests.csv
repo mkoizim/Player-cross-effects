@@ -1,0 +1,19 @@
+outcome,level,test,term,coef,se,lo,hi,p,n
+vs_lhp,PA,DiD (pre-specified),anyL,0.0292,0.0039,0.0214,0.0369,0.0000,202373
+vs_lhp,PA,DiD (pre-specified),anyL_post,0.0186,0.0049,0.0090,0.0283,0.0002,202373
+e2,PA,DiD (pre-specified),anyL,-0.0010,0.0002,-0.0015,-0.0006,0.0000,202329
+e2,PA,DiD (pre-specified),anyL_post,-0.0007,0.0003,-0.0013,-0.0002,0.0077,202329
+e2_starter,PA,DiD (pre-specified),anyL,-0.0012,0.0002,-0.0016,-0.0008,0.0000,202329
+e2_starter,PA,DiD (pre-specified),anyL_post,-0.0010,0.0003,-0.0015,-0.0005,0.0002,202329
+vs_lhp,PA,triple difference on outs (pre-specified),anyL_post,0.0064,0.0076,-0.0085,0.0213,0.3979,202373
+vs_lhp,PA,triple difference on outs (pre-specified),anyL_post_early,0.0182,0.0087,0.0011,0.0353,0.0370,202373
+e2,PA,triple difference on outs (pre-specified),anyL_post,-0.0005,0.0004,-0.0014,0.0003,0.2008,202329
+e2,PA,triple difference on outs (pre-specified),anyL_post_early,-0.0003,0.0005,-0.0012,0.0006,0.5385,202329
+entering pitcher is LHP,entry,DiD (pre-specified),anyL,0.1277,0.0061,0.1156,0.1397,0.0000,45560
+entering pitcher is LHP,entry,DiD (pre-specified),anyL_post,0.0345,0.0085,0.0179,0.0510,0.0000,45560
+entering pitcher is LHP,entry,triple difference on outs (pre-specified),anyL_post,0.0542,0.0210,0.0129,0.0954,0.0101,45560
+entering pitcher is LHP,entry,triple difference on outs (pre-specified),anyL_post_early,-0.0251,0.0230,-0.0701,0.0199,0.2751,45560
+entering pitcher is LHP,entry,"triple difference on outs, mid-inning entries only (pre-specified)",anyL_post,0.0556,0.0208,0.0148,0.0965,0.0076,15050
+entering pitcher is LHP,entry,"triple difference on outs, mid-inning entries only (pre-specified)",anyL_post_early,0.0303,0.0293,-0.0271,0.0877,0.3015,15050
+entering pitcher is LHP,entry,"mid-inning vs inning-start (EXPLORATORY, post-data)",anyL_post,0.0152,0.0103,-0.0050,0.0354,0.1413,45560
+entering pitcher is LHP,entry,"mid-inning vs inning-start (EXPLORATORY, post-data)",anyL_post_mid,0.0552,0.0180,0.0198,0.0905,0.0022,45560
