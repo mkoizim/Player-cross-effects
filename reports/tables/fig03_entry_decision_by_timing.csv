@@ -1,0 +1,33 @@
+era,timing,cfg,n,lhp_share,se_naive
+2000–14,mid-inning,LL,1121,0.8448,0.0108
+2000–14,mid-inning,LR,3813,0.8332,0.0060
+2000–14,mid-inning,RL,7967,0.7812,0.0046
+2000–14,mid-inning,RR,8458,0.7307,0.0048
+2000–14,start of inning,LL,1513,0.5069,0.0129
+2000–14,start of inning,LR,4928,0.4966,0.0071
+2000–14,start of inning,RL,12535,0.4428,0.0044
+2000–14,start of inning,RR,15250,0.2721,0.0036
+2015–19,mid-inning,LL,376,0.7580,0.0221
+2015–19,mid-inning,LR,1232,0.7922,0.0116
+2015–19,mid-inning,RL,2972,0.7268,0.0082
+2015–19,mid-inning,RR,3054,0.6863,0.0084
+2015–19,start of inning,LL,524,0.4771,0.0218
+2015–19,start of inning,LR,1822,0.4385,0.0116
+2015–19,start of inning,RL,5300,0.4179,0.0068
+2015–19,start of inning,RR,6336,0.2721,0.0056
+2020,mid-inning,LL,33,0.6970,0.0800
+2020,mid-inning,LR,114,0.6053,0.0458
+2020,mid-inning,RL,267,0.6816,0.0285
+2020,mid-inning,RR,222,0.4775,0.0335
+2020,start of inning,LL,78,0.4359,0.0561
+2020,start of inning,LR,155,0.4000,0.0393
+2020,start of inning,RL,451,0.4412,0.0234
+2020,start of inning,RR,526,0.2338,0.0185
+2021–25,mid-inning,LL,335,0.7373,0.0240
+2021–25,mid-inning,LR,1151,0.7454,0.0128
+2021–25,mid-inning,RL,3052,0.7182,0.0081
+2021–25,mid-inning,RR,2878,0.5949,0.0092
+2021–25,start of inning,LL,545,0.4716,0.0214
+2021–25,start of inning,LR,2105,0.4228,0.0108
+2021–25,start of inning,RL,6242,0.4245,0.0063
+2021–25,start of inning,RR,7636,0.2562,0.0050

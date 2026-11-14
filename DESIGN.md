@@ -1,8 +1,10 @@
 # DESIGN — Player cross-effects: the handedness-mix externality
 
-Status: **Phase 1 draft, awaiting review.** Nothing below has been run against
-data. Numbers marked *(prior)* are back-of-envelope figures from memory or
-arithmetic, to be replaced by estimates in Phase 2.
+Status: **Phase 1 approved 2026-11-14. Phase 2 (pipeline + descriptives) complete,
+awaiting review.** Sections 1–11 are the pre-specified design and are left as
+written, including numbers marked *(prior)*. Measured replacements for those
+priors, the user's decisions, and the issues Phase 2 raised are in §12. Where
+§12 and an earlier section disagree on a number, §12 is the measured one.
 
 ---
 
@@ -448,3 +450,76 @@ Phase 2 is built).
    the literature search forward?
 7. **Toolchain.** OK to build the Chadwick C tools from source in the
    pipeline (most faithful parser), with `uv` for Python dependencies?
+
+---
+
+## 12. Phase 2 addendum (2026-11-14)
+
+Hypotheses, primary specifications and thresholds above are unchanged. This
+section records decisions, measured values, and problems found. Detail and
+figures: `reports/phase2_descriptives.md`.
+
+### 12.1 Decisions on §11 (user, 2026-11-14)
+
+All recommendations accepted: handedness case only, broader survey deferred;
+credit as marginal lineup value plus Shapley presentation; SESOI of 1 run per
+LHH per 600 PA and 2 pp of exposure; windows as proposed; bench as control and
+moderator; Chadwick C tools and `uv`; literature search pulled forward.
+
+### 12.2 Measured values replacing priors
+
+| Quantity | Prior (§1.2, §7) | Measured, 2021–25 |
+|---|---|---|
+| Share of PAs in LHH slots | ~40% | 33% (prior wrongly counted switch hitters) |
+| Relief-phase share of those PAs | ~40% | 42% |
+| LHH relief-phase PAs per five-year era | ~150k | 127k (108k in 2015–19) |
+| LHH platoon split | 25–30 points | 30 overall, 35 vs relievers |
+| Plausible exposure shift from neighbors | "10 pp would be big" | raw RR-vs-anyL gap is 5.8 pp |
+| Implied value per LHH per 600 PA | ~1 run | ~0.4 runs (raw arithmetic, handedness channel only) |
+
+Power (§7) restated with measured counts: per-era naive standard error on an
+RR-vs-anyL difference in exposure is about 0.3 pp; on realized wOBA about
+0.003, still above the 0.002 SESOI. The conclusion of §7 stands.
+
+### 12.3 Problems the descriptives raised
+
+1. **Value is tracking below the SESOI.** Exposure moves by more than 2 pp
+   (H1 on E1 looks likely to hold) but the implied run value is under half
+   the 1-run threshold. Phase 3 is likely to land on the outcome §3 lists as
+   falsifying H1 on value.
+2. **§5.2's account of the pre-rule regime was wrong.** Neighbors mattered
+   before 2020 (gap 6.1 pp in 2000–14, 4.5 pp in 2015–19). H4 is therefore
+   about a change in an existing gradient, as §5.2's event-study language
+   says, and not about the rule creating one.
+3. **The two-out triple difference may not discriminate.** In mid-inning
+   entries the gap widened by a similar amount with two outs as with fewer.
+   The premise that the rule "binds far less" with two outs was too strong:
+   it binds whenever the batter reaches.
+4. **2015–19 may be an unusually low baseline.** A two-period comparison is
+   not enough; the season-level event study is required.
+5. **Unhypothesized patterns larger than the neighbor effect:** opposing
+   bullpen supply of lefties, and a post-2020 rise in pinch-hitting for
+   lefties against left-handed relievers (9.4% to 15.4% of slot PAs).
+6. **LL configurations are rare** (3–5% of lefties), so four-way splits are
+   thin.
+
+### 12.4 Proposed changes — not adopted until approved
+
+Each of these is a post-data change and would be labelled exploratory unless
+you approve it as a design change:
+
+- Primary neighbor contrast RR vs anyL; four-way split secondary.
+- H4: keep the two-out triple difference as the pre-specified test; add a
+  mid-inning vs inning-start contrast as exploratory.
+- Promote bullpen supply from moderator (H5) to a headline descriptive, and
+  add the pinch-hitting response as a hypothesis (H8).
+- Opener threshold: starter facing fewer than 10 batters, for H7 only.
+
+### 12.5 Deviations from the Phase 2 plan in §4.3 and §9
+
+- `talent` table not built: shrinkage estimates are a model, so it moves to
+  the start of Phase 3.
+- Statcast not ingested: Baseball Savant is blocked by this environment's
+  network policy. Needed only for the Phase 3 xwOBA check.
+- Literature search done from search summaries only; article hosts are
+  blocked, so full texts were not read.

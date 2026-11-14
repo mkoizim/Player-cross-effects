@@ -1,0 +1,21 @@
+# Pins for every external input. Change a pin => rebuild from `make clean data`.
+
+[retrosheet]
+url = "https://github.com/chadwickbureau/retrosheet.git"
+sha = "ee82e50bad713c27df6ca12a81d206de4267e073"   # 2026-08-13
+
+[chadwick]
+url = "https://github.com/chadwickbureau/chadwick.git"
+tag = "v0.9.5"
+sha = "579c96ccb5c26f0c96e1e3eb26b9139c512587c1"
+
+[seasons]
+first = 2000
+last = 2025
+
+[definitions]
+# Trailing window (days, excluding game day) used to infer who is in a bullpen.
+bullpen_window_days = 14
+# A player who starts at pitcher but has at least this many PA in the season
+# is treated as a hitter (two-way players), not as a pitcher batting.
+two_way_min_pa = 150
