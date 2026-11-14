@@ -28,3 +28,8 @@ opener_max_start_share = 0.5
 [talent]
 # Prior-season weights (most recent first) for expected-matchup talent estimates.
 season_weights = [5, 4, 3]
+
+[valuation]
+# External assumptions, not estimated here. Used only to express run values in dollars.
+runs_per_win = 10.0            # conventional rule of thumb
+dollars_per_win = 8.0e6        # FanGraphs estimate for the 2025-26 free-agent market

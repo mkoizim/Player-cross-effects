@@ -4,8 +4,10 @@
 paying for.** A left-handed hitter with a lefty in one of the next two lineup
 slots is 4.7 percentage points more likely to face a left-handed reliever than
 one followed by two righties. Over a full season that costs him about a third
-of a run. The one lineup decision that does carry a few runs is not batting
-lefties back to back, and every team already avoids it.
+of a run, or roughly $0.3 million at free-agent prices. That is worth taking
+when it is free (the batting order) and not worth a premium when it is not
+(an acquisition). The one lineup decision that carries a few runs is not
+batting lefties back to back, and every team already avoids it.
 
 Regular seasons 2000–2025, 4.7 million plate appearances, Retrosheet
 play-by-play. Design, hypotheses and thresholds were written before the data
@@ -15,8 +17,9 @@ were examined ([`DESIGN.md`](DESIGN.md)); changes made afterwards are labelled.
 
 1. **Don't pay for "lineup balance" as protection.** The effect of neighbors
    on a lefty's matchups is real and precisely measured, and it is worth
-   0.36 runs per 600 PA (95% interval 0.28 to 0.43). We set 1 run as the
-   threshold for "matters" in advance. It is inside that by a wide margin.
+   0.36 runs per 600 PA (95% interval 0.28 to 0.43), about $0.3 million a
+   season. See [what that is worth](#what-a-third-of-a-run-is-worth) for the
+   benchmark.
 2. **Do keep lefties apart in the order.** Arrangement matters more than
    count. Three left-handed hitters spread through the order are worth about
    4.6 runs a season more than the same three batted consecutively (interval
@@ -45,6 +48,46 @@ were examined ([`DESIGN.md`](DESIGN.md)); changes made afterwards are labelled.
    exposure by 5 points — as much as the neighbor effect — and against a
    bullpen with no lefty the neighbor effect is zero. Still small in runs
    (about 0.4 per lefty hitter per additional lefty reliever, season-long).
+
+## What a third of a run is worth
+
+"Small" needs a benchmark, and the right one depends on what it costs to act.
+
+| | Runs per season | Wins | Approx. value |
+|---|---|---|---|
+| Neighbor effect on one left-handed hitter | 0.36 | 0.04 | $0.3M |
+| Same, across a lineup with three or four lefties | 1.1–1.4 | 0.11–0.14 | $0.9–1.1M |
+| Gain to a righty batting directly behind a lefty | 0.39 | 0.04 | $0.3M |
+| Pinch-hitting for a lefty against lefty relievers, per lineup slot | 0.48 | 0.05 | $0.4M |
+| A 2025 team's actual batting order vs. a random order of the same nine | 0.1–1.4 (median 0.9) | 0.01–0.14 | $0.1–1.1M |
+| Three lefties spread out vs. batted consecutively | 4.6 | 0.46 | $3.7M |
+
+Conversions use 10 runs per win and $8 million per win, the latter a
+[FanGraphs estimate](https://blogs.fangraphs.com/what-are-teams-paying-for-a-win-in-free-agency-2026-edition)
+of 2025–26 free-agent prices. Both are outside assumptions, set in
+[`config.toml`](config.toml), not results of this study; the table is
+[`m09_dollar_values.csv`](reports/tables/m09_dollar_values.csv). The second
+row adds the single-hitter effect across lefties and is a rough guide; the
+lineup model behind the last two rows is the better tool for a specific
+lineup.
+
+How to read it:
+
+- **Where acting is free, take it.** Ordering the lineup so lefties are not
+  adjacent costs nothing, so any positive value clears the bar. Teams already
+  do this; the median club gets about 0.9 runs from it, and that is roughly
+  what is at stake in getting it wrong on a given roster.
+- **Where acting costs money, it is a tiebreaker.** Preferring a right-handed
+  bat over an otherwise equal left-handed one for the sake of the lefties
+  around him buys about $0.3 million per neighboring lefty per season. That
+  is not a reason to pay a premium or to pass on the better hitter.
+- **Against the uncertainty in any hitter's projection, it disappears.** A
+  season's projection for one hitter is typically off by many runs; an
+  adjustment of a third of a run is inside that noise. This study did not
+  measure projection error, so treat that comparison as context.
+- **The pre-registered threshold was a convention.** We fixed "1 run per 600
+  PA" in advance so that a result could be called a miss. It was not derived
+  from costs. The dollar figures above are the more useful yardstick.
 
 ## The findings
 

@@ -107,3 +107,4 @@ Append-only. Newest last. Each entry: date, decision, reason, who decided.
 | 2026-11-14 | Design C implemented as a reduced-form lineup value function, not a manager decision model; Design D not run | Effects small and near-additive; recorded as deviations in DESIGN §13.3 | Claude |
 | 2026-11-14 | E2 pitcher term centred within pitcher-hand × batter-side | First version double-counted the platoon effect; found via calibration check | Claude |
 | 2026-11-14 | Value verdicts judged in runs per 600 full-season PA | DESIGN §3 threshold was ambiguous about which PAs | Claude |
+| 2026-11-14 | README gains a dollar conversion and a free-vs-paid reading of "small"; rates (10 runs/win, $8M/win) are external assumptions in `config.toml` `[valuation]`, table from `scripts/m09_dollar_values.py` | User asked what benchmark justifies "not worth much"; the 1-run SESOI was a convention, not cost-derived | User / Claude |
