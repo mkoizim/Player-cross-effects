@@ -6,8 +6,10 @@ slots is 4.7 percentage points more likely to face a left-handed reliever than
 one followed by two righties. Over a full season that costs him about a third
 of a run, or roughly $0.4 million at free-agent prices. That is worth taking
 when it is free (the batting order) and not worth a premium when it is not
-(an acquisition). The one lineup decision that carries a few runs is not
-batting lefties back to back, and every team already avoids it.
+(an acquisition). What does carry a few runs is keeping lefties from batting
+back to back, which takes a right-handed or switch hitter to put between them.
+Teams already do about half of that separating, and most of what is left is
+under a run a season.
 
 Regular seasons 2000–2025, 4.7 million plate appearances, Retrosheet
 play-by-play. Design, hypotheses and thresholds were written before the data
@@ -20,30 +22,45 @@ were examined ([`DESIGN.md`](DESIGN.md)); changes made afterwards are labelled.
    0.36 runs per 600 PA (95% interval 0.28 to 0.43), about $0.4 million a
    season. See [what that is worth](#what-a-third-of-a-run-is-worth) for the
    benchmark.
-2. **Do keep lefties apart in the order.** Arrangement matters more than
-   count. Three left-handed hitters spread through the order are worth about
-   4.6 runs a season more than the same three batted consecutively (interval
-   4.0 to 5.2). But this is a mistake nobody makes: in 2025 every one of the
-   30 teams' actual lineups beat a random ordering of the same nine hitters,
-   by 0.1 to 1.4 runs. There is at most a run or so left to find.
-3. **The benefit is mutual, so it is not the righty's to be credited with.**
-   A right-handed hitter batting directly behind a lefty sees left-handed
-   relievers 6.8 points more often and gains about 0.39 runs per 600 PA. The
-   lefty "creates" that as surely as the righty "protects" him. It belongs to
-   the pairing.
-4. **Who a hitter faces is worth runs, but it comes from how he is used, not
+2. **Do keep lefties apart in the order, and that is what right-handed
+   hitters are for.** Arrangement matters more than count. Three left-handed
+   hitters spread through the order are worth about 4.6 runs a season more
+   than the same three batted consecutively (interval 4.0 to 5.2). About 3.0
+   of those runs land on the lefties' own batting lines (1.0 each) and 1.5 on
+   the righties' (0.26 each). Separating lefties requires a non-lefty to put
+   between them, so the original intuition holds in direction: righties, and
+   switch hitters equally, make this possible.
+3. **Teams capture about half of it already.** In 2025, lineups had 0.57
+   pairs of adjacent lefties per game against 1.14 if the same nine hitters
+   were ordered at random, and 29 of 30 clubs were below their random figure.
+   Still, 38% of lineups had at least one adjacent pair, though 82% had few
+   enough lefties to avoid it. Actual batting orders beat random ones by 0.1
+   to 1.4 runs a season per team. Reordering purely to separate lefties,
+   ignoring every other reason for a batting order, would add 0.6 runs for
+   the median club and at most 1.4; swapping one pair of adjacent hitters per
+   game gets 0.4 of that.
+4. **The benefit is mutual, and WAR already books each side to its own
+   line.** A right-handed hitter batting directly behind a lefty sees
+   left-handed relievers 6.8 points more often and gains about 0.39 runs per
+   600 PA, which shows up in *his* batting line and WAR though the lefty
+   caused it. The lefty's better matchups show up in his. Neither figure moves
+   with the player to a differently shaped lineup. In 2021–25 hitter-seasons
+   the part of a line owed to neighbors never exceeded about half a run
+   (0.05 WAR); the per-player figures are in
+   [`m08_context_all.csv`](reports/tables/m08_context_all.csv).
+5. **Who a hitter faces is worth runs, but it comes from how he is used, not
    from who bats near him.** Across 2021–25, a left-handed regular's matchup
    context ranges from about −2.5 to +1.7 runs a season (5th to 95th
    percentile). Platooned lefties are at the top; everyday stars who get every
    lefty specialist are at the bottom. The part traceable to neighbors is
    never more than half a run. When projecting a platoon bat into an everyday
    role, this is the adjustment to make.
-5. **A right-handed bench bat is being used more since the three-batter
+6. **A right-handed bench bat is being used more since the three-batter
    rule.** Pinch-hitting for a lefty against a left-handed reliever rose from
    9% of those plate appearances (2015–19) to 15% (2021–25), including for AL
    clubs that always had the DH. The substitution is worth about half a run
    per lineup slot per season, twice what it was.
-6. **The opposing bullpen matters more than your own batting order.** Each
+7. **The opposing bullpen matters more than your own batting order.** Each
    additional left-handed reliever in the other bullpen raises a lefty's
    exposure by 5 points — as much as the neighbor effect — and against a
    bullpen with no lefty the neighbor effect is zero. Still small in runs
@@ -162,12 +179,26 @@ beyond counting as right-handed.
 
 There is no player-level "protection" number that travels with a hitter. The
 value depends on which lineup he joins and whom he displaces. What can be
-computed is the change in the *other eight* hitters' expected matchups from a
-specific change to a specific lineup
-([examples](reports/tables/m07_marginal_examples.csv)): in a lineup with
-lefties batting first, third and sixth, replacing the right-handed #2 hitter
-with a lefty costs the rest of the lineup about 3 runs a season; replacing the
-#3 lefty with a righty changes nothing.
+computed is the effect of a specific change to a specific lineup, split into
+what lands on the changed slot and what lands on the other eight hitters
+([table](reports/tables/m11_swap_decomposition.csv)). Take a lineup with
+lefties batting first, third and sixth:
+
+| Change | Total | On that slot | On the other eight |
+|---|---|---|---|
+| #2 righty becomes a lefty (three lefties in a row) | −3.0 | −2.0 | −1.0 |
+| #5 righty becomes a lefty (lefties at 5 and 6) | −2.0 | −1.3 | −0.6 |
+| #8 righty becomes a lefty (no lefty adjacent) | −0.7 | −0.8 | 0.0 |
+| #3 lefty becomes a righty | 0.0 | +0.4 | −0.5 |
+
+Runs per season from matchups only, before any difference in the hitters'
+own ability. "On that slot" is the matchup penalty or bonus the new hitter
+gets in that position compared with the old one; it is his own line, not a
+spillover. So a righty who separates two lefties is worth about 3 runs more
+than a lefty in the same slot, of which about 1 run is what he does for his
+teammates. That 1 run is the fair size of the "protection" a righty
+provides. The last row shows it cuts both ways: taking a lefty out removes
+the bonus matchups the righties around him were getting.
 
 For those who want a per-player table anyway, a Shapley split of each 2025
 starting lineup's spillover is in
@@ -241,7 +272,7 @@ about what was found, not proof that nothing exists.
 |---|---|---|
 | H1 | Right-handed neighbors reduce a lefty's exposure to left-handed relievers, and it is worth ≥ 1 run per 600 PA | Exposure: **yes** (+4.7 pp). Value: **no** (0.36 runs) |
 | H2 | The number of lefties elsewhere in the lineup matters | **No.** About 1 pp or less per lefty, sign inconsistent |
-| H3 | Arrangement matters beyond count | **Yes** against a blocked lineup (4.6 runs for three lefties); under 1.5 runs against lineups teams actually use |
+| H3 | Arrangement matters beyond count | **Yes** against a blocked lineup (4.6 runs for three lefties); teams already capture about half, with a median 0.6 runs left |
 | H4 | The three-batter minimum amplified the effect | **Not shown.** Difference exists but fails the placebo-date test |
 | H5 | The effect scales with opposing lefty relievers | **On/off, not graded.** Zero with none; similar with one through four |
 | H6 | Right-handed hitters behind lefties benefit | **Yes** in exposure (+6.8 pp); 0.39 runs, below threshold |

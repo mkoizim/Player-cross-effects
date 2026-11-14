@@ -1,0 +1,2 @@
+adjacent_pairs_per_game_actual,adjacent_pairs_per_game_random,teams_below_random_adjacency,share_of_lineups_with_no_adjacent_lefties,share_possible_without_adjacency,median_team_left_one_swap,median_team_left_upper_bound,max_team_left_upper_bound
+0.5747,1.1398,29,0.6177,0.8152,0.3764,0.5738,1.4041
