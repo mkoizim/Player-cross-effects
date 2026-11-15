@@ -283,12 +283,13 @@ about what was found, not proof that nothing exists.
 
 ## How this was made
 
-The question is mine. The code was written, and the analysis run, by an AI
-coding agent (Claude Code) working under rules I set: the hypotheses,
+The question is mine: how does the presence of RHH in a lineup benefit 
+the performance of LHH (and vice versa). The code was written, and the 
+analysis run, by Claude Code working under rules I set. The hypotheses,
 thresholds and primary specifications were fixed in [`DESIGN.md`](DESIGN.md)
 before any data were examined, and the agent had to stop for my review before
 moving from design to data to models. The agent drafted the design, including
-its central reframing from "righties make lefties better" to "handedness
+its central reframing from effectively "righties make lefties better" to "handedness
 changes how opponents use their bullpen", and I reviewed and approved it.
 
 Every decision after that, with the date and who made it, is in
@@ -297,7 +298,10 @@ changed: I replaced the agent's proposed definition of an opener with my own,
 and my questions on an earlier draft of this write-up found three claims that
 went further than the numbers behind them. Those were corrected and backed
 with new tables (`scripts/m11_lineup_followups.py`). The agent's standing
-instructions are in [`CLAUDE.md`](CLAUDE.md).
+instructions are in [`CLAUDE.md`](CLAUDE.md). 
+
+Critically, I maintain final direction over how to interpret and act on 
+findings.
 
 ## Reproduce
 
