@@ -20,8 +20,7 @@ Final deliverable is `README.md`, written for an MLB front-office reader.
 | 2 | Reproducible data pipeline + descriptive analysis only | **STOP** for user review before any modeling |
 | 3 | Modeling, credit allocation, README write-up | Final review |
 
-- **Current phase: 3 complete — README is the final write-up, awaiting final
-  review.** Phase 3 approved by user 2026-11-14.
+- **Current phase: 3 complete; released as v1.0 on 2026-11-15.** Phase 3 approved by user 2026-11-14.
 - Never begin the next phase without explicit user approval in the
   conversation.
 - "Descriptive" in Phase 2 means counts, rates, cross-tabs, and plots of

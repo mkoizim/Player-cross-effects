@@ -1,10 +1,13 @@
 # Do right-handed hitters protect the lefties around them?
 
-**Short answer: yes, through separation.** Keeping left-handed hitters from
-batting next to each other is worth up to about 5 runs a season, half a win,
-and it takes right-handed or switch hitters to do it. That value is spread
-across the batting lines of the lefties and the righties involved, so every
-hitter's observed production carries some of the lineup he played in.
+**Short answer: yes, through separation, and most clubs already collect most
+of it.** Keeping left-handed hitters from batting next to each other is worth
+up to about 5 runs a season, half a win, compared with batting them back to
+back, and it takes right-handed or switch hitters to do it. Teams already avoid
+most of that: reordering would add about 0.6 runs for the median 2025 club and
+at most 1.4. The separation value is spread across the batting lines of the
+lefties and the righties involved, so every hitter's observed production
+carries some of the lineup he played in.
 
 Three numbers frame it:
 
@@ -13,7 +16,10 @@ Three numbers frame it:
   interval 4.0 to 5.2). That is the size of the thing a roster's handedness
   mix makes possible.
 - **About 3.5 runs** separate the most and least favorable 2025 clubs as they
-  actually lined up (from +1.1 to −2.4). Teams have about half as many
+  actually lined up (from +1.1 to −2.4). Where a club lands tracks how many
+  lefties it starts more than the order they bat in: Washington started 4.5
+  lefties a game and sits at −2.4, Pittsburgh 2.2 and sits at +1.1, while
+  batting order is worth at most 1.4 runs for any club. Teams have about half as many
   adjacent lefties as chance would give them, and 18% of lineups carry five or
   more lefties and cannot avoid adjacency at all.
 - **About 1 run** is what one right-handed hitter does for his teammates by
@@ -301,12 +307,14 @@ that nothing exists.
 \* added after the descriptive phase.
 
 ## How this was made
-This project was executed as a test of Claude Fable 5.2’s 
-research design and execution capabilities.
+
+I ran this project to see how far an AI agent (Claude Fable 5.2) could take a
+real baseball research question, with me setting the question and reviewing
+its choices.
 
 The question is mine: how does the presence of RHH in a lineup benefit 
 the performance of LHH (and vice versa). The code was written, and the 
-analysis run, by Claude Code working under rules I set. The hypotheses,
+analysis run, by Claude Code working under rules it proposed and I approved. The hypotheses,
 thresholds and primary specifications were fixed in [`DESIGN.md`](DESIGN.md)
 before any data were examined, and the agent had to stop for my review before
 moving from design to data to models. The agent drafted the design, including

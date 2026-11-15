@@ -1,6 +1,6 @@
 # DESIGN — Player cross-effects: the handedness-mix externality
 
-Status: **All three phases complete; final review pending.** Sections 1–11 are the pre-specified design and are left as
+Status: **All three phases complete; released as v1.0 on 2026-11-15.** Sections 1–11 are the pre-specified design and are left as
 written, including numbers marked *(prior)*. Measured replacements for those
 priors, the user's decisions, and the issues Phase 2 raised are in §12. Where
 §12 and an earlier section disagree on a number, §12 is the measured one.
