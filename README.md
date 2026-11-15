@@ -281,6 +281,24 @@ about what was found, not proof that nothing exists.
 
 \* added after the descriptive phase.
 
+## How this was made
+
+The question is mine. The code was written, and the analysis run, by an AI
+coding agent (Claude Code) working under rules I set: the hypotheses,
+thresholds and primary specifications were fixed in [`DESIGN.md`](DESIGN.md)
+before any data were examined, and the agent had to stop for my review before
+moving from design to data to models. The agent drafted the design, including
+its central reframing from "righties make lefties better" to "handedness
+changes how opponents use their bullpen", and I reviewed and approved it.
+
+Every decision after that, with the date and who made it, is in
+[`docs/decisions.md`](docs/decisions.md). Two examples of what review
+changed: I replaced the agent's proposed definition of an opener with my own,
+and my questions on an earlier draft of this write-up found three claims that
+went further than the numbers behind them. Those were corrected and backed
+with new tables (`scripts/m11_lineup_followups.py`). The agent's standing
+instructions are in [`CLAUDE.md`](CLAUDE.md).
+
 ## Reproduce
 
 Requires `git`, [`uv`](https://docs.astral.sh/uv/), a C toolchain (`gcc`,
@@ -292,6 +310,9 @@ make describe   # descriptive tables and figures (scripts/tab*, scripts/fig*)
 make models     # models, lineup value, credit (scripts/m*)
 make test
 ```
+
+`make all` runs every step. From a fresh clone, `make data` takes about 8
+minutes.
 
 Inputs are pinned by commit in [`config.toml`](config.toml). Raw and derived
 data are written under `data/` and not committed. Files in `reports/` are
@@ -307,3 +328,8 @@ by Retrosheet. Interested parties may contact Retrosheet at
 Event files are read from the Chadwick Bureau mirror
 (`chadwickbureau/retrosheet`) and parsed with the Chadwick tools
 (`chadwickbureau/chadwick`).
+
+## License
+
+Code and documentation: MIT ([`LICENSE`](LICENSE)). Retrosheet data are not
+included in this repository and are subject to Retrosheet's own terms above.
