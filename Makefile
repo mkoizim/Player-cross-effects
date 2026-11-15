@@ -1,9 +1,9 @@
 # Everything is rebuilt from pinned inputs. Raw and derived data live in data/ (gitignored).
 PY = uv run python
 
-.PHONY: all setup fetch parse derive data describe models test clean
+.PHONY: all setup fetch parse derive data describe models test check-reports clean
 
-all: data describe models test
+all: data describe models test check-reports
 
 setup:
 	uv sync
@@ -28,6 +28,9 @@ models:                 ## Phase 3 models, lineup value, credit allocation
 
 test:
 	uv run pytest -q
+
+check-reports:          ## regenerated reports match committed: tables byte-for-byte, figures pixel-for-pixel
+	$(PY) -m pce.check_reports
 
 clean:
 	rm -rf data/interim data/processed

@@ -54,6 +54,7 @@ make data       # fetch pinned inputs, build Chadwick, parse, derive  (~8 min af
 make describe   # descriptive tables and figures (scripts/tab*, scripts/fig*)
 make models     # Phase 3 models, lineup value, credit (scripts/m*)
 make test       # checks, incl. PA totals vs Retrosheet game logs by team-season
+make check-reports   # regenerated reports match committed (tables bytes, figures pixels)
 ```
 
 Code: `src/pce/` (`fetch`, `parse`, `derive`, `talent`, `describe` helpers,

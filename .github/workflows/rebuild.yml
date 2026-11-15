@@ -1,5 +1,6 @@
 # Rebuilds everything from pinned inputs on a clean machine, runs the checks,
-# and fails if any committed table or figure differs from the regenerated one.
+# and fails if any committed table differs from its regenerated version or any
+# committed figure differs in its pixels (see src/pce/check_reports.py).
 name: rebuild
 
 on:
@@ -33,4 +34,11 @@ jobs:
         run: make test
 
       - name: Committed reports match regenerated reports
-        run: git diff --stat --exit-code -- reports/
+        run: make check-reports
+
+      - name: Keep regenerated reports for inspection
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regenerated-reports
+          path: reports/
