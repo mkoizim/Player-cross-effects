@@ -1,0 +1,480 @@
+{
+ "size_in": [
+  12.5,
+  3.6
+ ],
+ "suptitle": "",
+ "texts": [
+  {
+   "text": "2021–25. Effect on the slot's expected matchup value of a left-only hitter in each nearby slot. 95% intervals.",
+   "at": [
+    0.01,
+    0.005
+   ],
+   "color": "#52514eff",
+   "size": 7.5,
+   "weight": "normal"
+  }
+ ],
+ "axes": [
+  {
+   "title": {
+    "left": "Left-handed hitter"
+   },
+   "xlabel": "points of expected wOBA,\nrelief-phase PAs",
+   "ylabel": "",
+   "xlim": [
+    -3.64148,
+    2.47269
+   ],
+   "ylim": [
+    -0.2,
+    4.2
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     -3.0,
+     -2.0,
+     -1.0,
+     0.0,
+     1.0,
+     2.0
+    ],
+    "labels": [
+     "−3",
+     "−2",
+     "−1",
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "yticks": {
+    "at": [
+     4.0,
+     3.0,
+     2.0,
+     1.0,
+     0.0
+    ],
+    "labels": [
+     "lefty two slots before",
+     "lefty one slot before",
+     "lefty one slot after",
+     "lefty two slots after",
+     "extra when both of\nthe next two are lefties"
+    ]
+   },
+   "lines": [
+    {
+     "label": "_child0",
+     "x": [
+      0.0,
+      0.0
+     ],
+     "y": [
+      0.0,
+      1.0
+     ],
+     "color": "#52514eff",
+     "style": "-",
+     "width": 1.0,
+     "marker": "None"
+    },
+    {
+     "label": "_child2",
+     "x": [
+      -1.50052,
+      -2.87425,
+      -2.64646,
+      -1.49167,
+      0.880518
+     ],
+     "y": [
+      4.0,
+      3.0,
+      2.0,
+      1.0,
+      0.0
+     ],
+     "color": "#2a78d6ff",
+     "style": "None",
+     "width": 2.0,
+     "marker": "o"
+    }
+   ],
+   "patches": [],
+   "collections": [
+    {
+     "type": "LineCollection",
+     "label": "_child1",
+     "colors": [
+      "#2a78d6ff"
+     ],
+     "segments": [
+      [
+       [
+        -1.86175,
+        4.0
+       ],
+       [
+        -1.13928,
+        4.0
+       ]
+      ],
+      [
+       [
+        -3.36357,
+        3.0
+       ],
+       [
+        -2.38493,
+        3.0
+       ]
+      ],
+      [
+       [
+        -3.17041,
+        2.0
+       ],
+       [
+        -2.12251,
+        2.0
+       ]
+      ],
+      [
+       [
+        -1.87,
+        1.0
+       ],
+       [
+        -1.11333,
+        1.0
+       ]
+      ],
+      [
+       [
+        -0.193372,
+        0.0
+       ],
+       [
+        1.95441,
+        0.0
+       ]
+      ]
+     ]
+    }
+   ],
+   "texts": [],
+   "legend": null
+  },
+  {
+   "title": {
+    "left": "Right-handed hitter"
+   },
+   "xlabel": "points of expected wOBA,\nrelief-phase PAs",
+   "ylabel": "",
+   "xlim": [
+    -3.64148,
+    2.47269
+   ],
+   "ylim": [
+    -0.2,
+    4.2
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     -3.0,
+     -2.0,
+     -1.0,
+     0.0,
+     1.0,
+     2.0
+    ],
+    "labels": [
+     "−3",
+     "−2",
+     "−1",
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "yticks": {
+    "at": [
+     4.0,
+     3.0,
+     2.0,
+     1.0,
+     0.0
+    ],
+    "labels": [
+     "",
+     "",
+     "",
+     "",
+     ""
+    ]
+   },
+   "lines": [
+    {
+     "label": "_child0",
+     "x": [
+      0.0,
+      0.0
+     ],
+     "y": [
+      0.0,
+      1.0
+     ],
+     "color": "#52514eff",
+     "style": "-",
+     "width": 1.0,
+     "marker": "None"
+    },
+    {
+     "label": "_child2",
+     "x": [
+      0.416834,
+      1.95098,
+      1.23503,
+      -0.0567722,
+      0.102132
+     ],
+     "y": [
+      4.0,
+      3.0,
+      2.0,
+      1.0,
+      0.0
+     ],
+     "color": "#2a78d6ff",
+     "style": "None",
+     "width": 2.0,
+     "marker": "o"
+    }
+   ],
+   "patches": [],
+   "collections": [
+    {
+     "type": "LineCollection",
+     "label": "_child1",
+     "colors": [
+      "#2a78d6ff"
+     ],
+     "segments": [
+      [
+       [
+        0.189005,
+        4.0
+       ],
+       [
+        0.644662,
+        4.0
+       ]
+      ],
+      [
+       [
+        1.70718,
+        3.0
+       ],
+       [
+        2.19478,
+        3.0
+       ]
+      ],
+      [
+       [
+        0.951888,
+        2.0
+       ],
+       [
+        1.51817,
+        2.0
+       ]
+      ],
+      [
+       [
+        -0.3313,
+        1.0
+       ],
+       [
+        0.217756,
+        1.0
+       ]
+      ],
+      [
+       [
+        -0.394044,
+        0.0
+       ],
+       [
+        0.598309,
+        0.0
+       ]
+      ]
+     ]
+    }
+   ],
+   "texts": [],
+   "legend": null
+  },
+  {
+   "title": {
+    "left": "Switch hitter"
+   },
+   "xlabel": "points of expected wOBA,\nrelief-phase PAs",
+   "ylabel": "",
+   "xlim": [
+    -3.64148,
+    2.47269
+   ],
+   "ylim": [
+    -0.2,
+    4.2
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     -3.0,
+     -2.0,
+     -1.0,
+     0.0,
+     1.0,
+     2.0
+    ],
+    "labels": [
+     "−3",
+     "−2",
+     "−1",
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   "yticks": {
+    "at": [
+     4.0,
+     3.0,
+     2.0,
+     1.0,
+     0.0
+    ],
+    "labels": [
+     "",
+     "",
+     "",
+     "",
+     ""
+    ]
+   },
+   "lines": [
+    {
+     "label": "_child0",
+     "x": [
+      0.0,
+      0.0
+     ],
+     "y": [
+      0.0,
+      1.0
+     ],
+     "color": "#52514eff",
+     "style": "-",
+     "width": 1.0,
+     "marker": "None"
+    },
+    {
+     "label": "_child2",
+     "x": [
+      -0.137773,
+      0.214019,
+      0.363338,
+      0.222411,
+      -0.474358
+     ],
+     "y": [
+      4.0,
+      3.0,
+      2.0,
+      1.0,
+      0.0
+     ],
+     "color": "#2a78d6ff",
+     "style": "None",
+     "width": 2.0,
+     "marker": "o"
+    }
+   ],
+   "patches": [],
+   "collections": [
+    {
+     "type": "LineCollection",
+     "label": "_child1",
+     "colors": [
+      "#2a78d6ff"
+     ],
+     "segments": [
+      [
+       [
+        -0.521995,
+        4.0
+       ],
+       [
+        0.246448,
+        4.0
+       ]
+      ],
+      [
+       [
+        -0.201536,
+        3.0
+       ],
+       [
+        0.629575,
+        3.0
+       ]
+      ],
+      [
+       [
+        -0.103539,
+        2.0
+       ],
+       [
+        0.830214,
+        2.0
+       ]
+      ],
+      [
+       [
+        -0.21045,
+        1.0
+       ],
+       [
+        0.655271,
+        1.0
+       ]
+      ],
+      [
+       [
+        -1.26534,
+        0.0
+       ],
+       [
+        0.316624,
+        0.0
+       ]
+      ]
+     ]
+    }
+   ],
+   "texts": [],
+   "legend": null
+  }
+ ]
+}

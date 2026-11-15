@@ -1,0 +1,378 @@
+{
+ "size_in": [
+  10.5,
+  4.3
+ ],
+ "suptitle": "Who comes in to face a left-handed hitter, by what follows him",
+ "texts": [
+  {
+   "text": "Who comes in to face a left-handed hitter, by what follows him",
+   "at": [
+    0.01,
+    0.98
+   ],
+   "color": "#0b0b0bff",
+   "size": 11.5,
+   "weight": "bold"
+  },
+  {
+   "text": "Relief entries whose first batter is a starting left-handed hitter. With two outs a reliever can end the inning with one batter, so the rule binds less. Raw rates. Source: Retrosheet.",
+   "at": [
+    0.01,
+    0.005
+   ],
+   "color": "#52514eff",
+   "size": 7.5,
+   "weight": "normal"
+  }
+ ],
+ "axes": [
+  {
+   "title": {
+    "left": "Reliever enters with 0–1 outs"
+   },
+   "xlabel": "Batting side of the next two hitters",
+   "ylabel": "Entering reliever is left-handed",
+   "xlim": [
+    -0.3,
+    3.85
+   ],
+   "ylim": [
+    0.0,
+    100.0
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     0.0,
+     1.0,
+     2.0,
+     3.0
+    ],
+    "labels": [
+     "R, R",
+     "R, L",
+     "L, R",
+     "L, L"
+    ]
+   },
+   "yticks": {
+    "at": [
+     0.0,
+     20.0,
+     40.0,
+     60.0,
+     80.0,
+     100.0
+    ],
+    "labels": [
+     "0%",
+     "20%",
+     "40%",
+     "60%",
+     "80%",
+     "100%"
+    ]
+   },
+   "lines": [
+    {
+     "label": "2000–14",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0
+     ],
+     "y": [
+      36.8309,
+      52.9151,
+      60.0651,
+      60.9586
+     ],
+     "color": "#1baf7aff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    },
+    {
+     "label": "2015–19",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0
+     ],
+     "y": [
+      35.1124,
+      49.1599,
+      53.7223,
+      57.2973
+     ],
+     "color": "#2a78d6ff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    },
+    {
+     "label": "2021–25",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0
+     ],
+     "y": [
+      29.9503,
+      48.2223,
+      49.0923,
+      54.4321
+     ],
+     "color": "#eb6834ff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    }
+   ],
+   "patches": [],
+   "collections": [],
+   "texts": [
+    {
+     "text": "2021–25",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      3.0,
+      54.4321
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "2015–19",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      3.0,
+      59.9321
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "2000–14",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      3.0,
+      65.4321
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    }
+   ],
+   "legend": {
+    "title": "Seasons",
+    "entries": [
+     "2000–14",
+     "2015–19",
+     "2021–25"
+    ]
+   }
+  },
+  {
+   "title": {
+    "left": "Reliever enters with 2 outs"
+   },
+   "xlabel": "Batting side of the next two hitters",
+   "ylabel": "",
+   "xlim": [
+    -0.3,
+    3.85
+   ],
+   "ylim": [
+    0.0,
+    100.0
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     0.0,
+     1.0,
+     2.0,
+     3.0
+    ],
+    "labels": [
+     "R, R",
+     "R, L",
+     "L, R",
+     "L, L"
+    ]
+   },
+   "yticks": {
+    "at": [
+     0.0,
+     20.0,
+     40.0,
+     60.0,
+     80.0,
+     100.0
+    ],
+    "labels": [
+     "0%",
+     "20%",
+     "40%",
+     "60%",
+     "80%",
+     "100%"
+    ]
+   },
+   "lines": [
+    {
+     "label": "2000–14",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0
+     ],
+     "y": [
+      76.9849,
+      78.7187,
+      82.4163,
+      83.299
+     ],
+     "color": "#1baf7aff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    },
+    {
+     "label": "2015–19",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0
+     ],
+     "y": [
+      71.7589,
+      71.7105,
+      77.3286,
+      69.375
+     ],
+     "color": "#2a78d6ff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    },
+    {
+     "label": "2021–25",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0
+     ],
+     "y": [
+      65.5243,
+      73.1168,
+      75.9425,
+      70.2532
+     ],
+     "color": "#eb6834ff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    }
+   ],
+   "patches": [],
+   "collections": [],
+   "texts": [
+    {
+     "text": "2015–19",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      3.0,
+      69.375
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "2021–25",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      3.0,
+      74.875
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "2000–14",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      3.0,
+      83.299
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    }
+   ],
+   "legend": null
+  }
+ ]
+}

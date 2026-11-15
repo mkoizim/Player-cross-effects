@@ -5,9 +5,12 @@ naive binomial errors that ignore clustering by game; they are for scale, not in
 """
 from __future__ import annotations
 
+import json
+
 import matplotlib
 
 matplotlib.use("Agg")
+import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -40,8 +43,74 @@ def save(fig, name: str, note: str | None = None) -> None:
     if note:
         fig.text(0.01, 0.005, note, fontsize=7.5, color=INK2, ha="left", va="bottom")
     fig.savefig(FIGURES / f"{name}.png", dpi=200, bbox_inches="tight")
+    (FIGURES / f"{name}.json").write_text(json.dumps(figure_contents(fig), indent=1, ensure_ascii=False) + "\n")
     plt.close(fig)
-    print(f"wrote reports/figures/{name}.png")
+    print(f"wrote reports/figures/{name}.png (+ .json record of what it plots)")
+
+
+def _num(v):
+    """Round to 6 significant digits so the record compares data, not float noise."""
+    v = float(v)
+    return v if not np.isfinite(v) or v == 0 else float(f"{v:.6g}")
+
+
+def _nums(a):
+    return np.vectorize(_num, otypes=[float])(np.asarray(a, dtype=float)).tolist() if np.size(a) else []
+
+
+def _color(c):
+    return mcolors.to_hex(c, keep_alpha=True)
+
+
+def _text(t):
+    return {"text": t.get_text(), "at": _nums(t.get_position()), "color": _color(t.get_color()),
+            "size": _num(t.get_fontsize()), "weight": str(t.get_fontweight())}
+
+
+def _ticks(axis):
+    lo, hi = sorted(axis.get_view_interval())
+    locs = [x for x in axis.get_majorticklocs() if lo - 1e-9 * (hi - lo) <= x <= hi + 1e-9 * (hi - lo)]
+    return {"at": _nums(locs), "labels": list(axis.get_major_formatter().format_ticks(locs))}
+
+
+def figure_contents(fig) -> dict:
+    """What a figure shows, independent of how it is rasterized: every plotted value, colour,
+    axis range, tick and text. Saved next to each PNG and checked byte-for-byte by
+    `make check-reports`, because PNG pixels differ between machines (fonts, anti-aliasing)."""
+    out = {"size_in": _nums(fig.get_size_inches()), "suptitle": fig.get_suptitle(),
+           "texts": [_text(t) for t in fig.texts], "axes": []}
+    for ax in fig.axes:
+        a = {"title": {k: ax.get_title(loc=k) for k in ("left", "center", "right") if ax.get_title(loc=k)},
+             "xlabel": ax.get_xlabel(), "ylabel": ax.get_ylabel(),
+             "xlim": _nums(ax.get_xlim()), "ylim": _nums(ax.get_ylim()),
+             "xscale": ax.get_xscale(), "yscale": ax.get_yscale(),
+             "xticks": _ticks(ax.xaxis), "yticks": _ticks(ax.yaxis),
+             "lines": [{"label": ln.get_label(), "x": _nums(ln.get_xdata(orig=False)),
+                        "y": _nums(ln.get_ydata(orig=False)), "color": _color(ln.get_color()),
+                        "style": str(ln.get_linestyle()), "width": _num(ln.get_linewidth()),
+                        "marker": str(ln.get_marker())} for ln in ax.get_lines()],
+             "patches": [{"type": type(p).__name__, "label": p.get_label(),
+                          "box": _nums(p.get_bbox().bounds) if hasattr(p, "get_bbox") else [],
+                          "color": _color(p.get_facecolor())} for p in ax.patches],
+             "collections": [], "texts": [], "legend": None}
+        for c in ax.collections:
+            d = {"type": type(c).__name__, "label": c.get_label(),
+                 "colors": sorted({_color(x) for x in c.get_facecolor()} | {_color(x) for x in c.get_edgecolor()})}
+            if hasattr(c, "get_segments"):
+                d["segments"] = [_nums(s) for s in c.get_segments()]
+            else:
+                d["offsets"] = _nums(c.get_offsets())
+                d["sizes"] = _nums(c.get_sizes())
+            a["collections"].append(d)
+        for t in ax.texts:
+            d = _text(t)
+            if hasattr(t, "xy"):  # annotation: anchor point plus offset
+                d["xy"], d["offset"], d["offset_units"] = _nums(t.xy), _nums(t.xyann), str(t.anncoords)
+            a["texts"].append(d)
+        if (leg := ax.get_legend()) is not None:
+            a["legend"] = {"title": leg.get_title().get_text(), "entries": [t.get_text() for t in leg.get_texts()]}
+        out["axes"].append(a)
+    return out
 
 
 def write_table(df: pd.DataFrame, name: str, index: bool = False) -> None:

@@ -253,9 +253,11 @@ by about half a run."
 
 ## Prior work
 
-Read in full unless noted. None estimates how the handedness of adjacent
-hitters changes a lefty's matchups, or what that is worth. That is a statement
-about what was found, not proof that nothing exists.
+The AI agent found and read these sources, in full unless noted; I have not
+read them myself, so the summaries below are its account of them. None
+estimates how the handedness of adjacent hitters changes a lefty's matchups,
+or what that is worth. That is a statement about what was found, not proof
+that nothing exists.
 
 - Ben Clemens, ["The Three Batter Minimum Rule Barely Matters"](https://blogs.fangraphs.com/the-three-batter-minimum-barely-matters/)
   (FanGraphs, Dec 2019): counted 489 short relief stints in 2019 that the rule
@@ -300,23 +302,25 @@ about what was found, not proof that nothing exists.
 
 ## How this was made
 
-This project was built by one person working with Claude Code, Anthropic's AI
-coding agent, in part to test what such a tool can do on an open research
-question. The division of labor:
+The question is mine: how does the presence of RHH in a lineup benefit 
+the performance of LHH (and vice versa). The code was written, and the 
+analysis run, by Claude Code working under rules I set. The hypotheses,
+thresholds and primary specifications were fixed in [`DESIGN.md`](DESIGN.md)
+before any data were examined, and the agent had to stop for my review before
+moving from design to data to models. The agent drafted the design, including
+its central reframing from effectively "righties make lefties better" to "handedness
+changes how opponents use their bullpen", and I reviewed and approved it.
 
-- **Human:** the question and the original hypothesis; approval of the design
-  and of each phase before the next began; decisions on scope, thresholds and
-  definitions (including the opener rule); and the review that caught three
-  claims in an earlier draft that went beyond what had been computed.
-- **AI agent:** the research design document, the data pipeline and tests,
-  the models, the figures, and the drafting of this write-up, including the
-  critique of the original framing.
+Every decision after that, with the date and who made it, is in
+[`docs/decisions.md`](docs/decisions.md). Two examples of what review
+changed: I replaced the agent's proposed definition of an opener with my own,
+and my questions on an earlier draft of this write-up found three claims that
+went further than the numbers behind them. Those were corrected and backed
+with new tables (`scripts/m11_lineup_followups.py`). The agent's standing
+instructions are in [`CLAUDE.md`](CLAUDE.md). 
 
-The agent's first answer to the headline question understated the separation
-result, and its first dollar conversion used a figure from a search summary
-that the source article did not support. Both were corrected after review.
-The decision log in [`CLAUDE.md`](CLAUDE.md) records who decided what, and the
-commit history shows the sequence.
+Critically, I maintain final direction over how to interpret and act on 
+findings.
 
 ## Reproduce
 
@@ -328,11 +332,16 @@ make data       # clone pinned Retrosheet data, build Chadwick tools, parse, der
 make describe   # descriptive tables and figures (scripts/tab*, scripts/fig*)
 make models     # models, lineup value, credit (scripts/m*)
 make test
+make check-reports   # regenerated tables, and what each figure plots, match the committed versions exactly
 ```
+
+`make all` runs every step. From a fresh clone, `make data` takes about 8
+minutes.
 
 Inputs are pinned by commit in [`config.toml`](config.toml). Raw and derived
 data are written under `data/` and not committed. Files in `reports/` are
-produced by scripts in `scripts/` whose names share their prefix. Descriptive
+produced by scripts in `scripts/` whose names share their prefix. Each figure
+has a `.json` record of what it plots, which CI checks exactly. Descriptive
 findings: [`reports/phase2_descriptives.md`](reports/phase2_descriptives.md).
 
 ## Data
@@ -344,3 +353,8 @@ by Retrosheet. Interested parties may contact Retrosheet at
 Event files are read from the Chadwick Bureau mirror
 (`chadwickbureau/retrosheet`) and parsed with the Chadwick tools
 (`chadwickbureau/chadwick`).
+
+## License
+
+Code and documentation: MIT ([`LICENSE`](LICENSE)). Retrosheet data are not
+included in this repository and are subject to Retrosheet's own terms above.
