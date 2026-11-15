@@ -309,9 +309,13 @@ def build_team_game(games, lu, players, bullpen, ap) -> pd.DataFrame:
     thr = players[["season", "player_id", "throws"]].rename(
         columns={"player_id": "opp_starter_id", "throws": "opp_starter_throws"})
     tg = tg.merge(thr, on=["season", "opp_starter_id"], how="left")
-    # De facto starter: behind an opener, the pitcher who faced the most batters.
+    # De facto starter: behind an opener, the pitcher who faced the most batters. Ties (57 of
+    # ~1,200 opener games) go to the first of the tied pitchers to enter after the opener (user
+    # decision 2026-11-15); without a rule the pick, and H7, varied between runs.
     op = ap[ap.opener][["game_id", "fld_team"]].assign(opp_opener=True)
-    bulk = (ap.sort_values("bf", ascending=False).drop_duplicates(["game_id", "fld_team"])
+    order = ["game_id", "fld_team", "bf", "opener", "entry_inning", "entry_outs", "pit_id"]
+    bulk = (ap.sort_values(order, ascending=[True, True, False, True, True, True, True])
+            .drop_duplicates(["game_id", "fld_team"])
             [["game_id", "fld_team", "throws"]].rename(columns={"throws": "bulk_throws"}))
     tg = tg.merge(op.merge(bulk, on=["game_id", "fld_team"]).rename(columns={"fld_team": "opp"}),
                   on=["game_id", "opp"], how="left")
