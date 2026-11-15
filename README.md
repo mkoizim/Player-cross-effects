@@ -236,9 +236,11 @@ by about half a run."
 
 ## Prior work
 
-Read in full unless noted. None estimates how the handedness of adjacent
-hitters changes a lefty's matchups, or what that is worth. That is a statement
-about what was found, not proof that nothing exists.
+The AI agent found and read these sources, in full unless noted; I have not
+read them myself, so the summaries below are its account of them. None
+estimates how the handedness of adjacent hitters changes a lefty's matchups,
+or what that is worth. That is a statement about what was found, not proof
+that nothing exists.
 
 - Ben Clemens, ["The Three Batter Minimum Rule Barely Matters"](https://blogs.fangraphs.com/the-three-batter-minimum-barely-matters/)
   (FanGraphs, Dec 2019): counted 489 short relief stints in 2019 that the rule
@@ -313,6 +315,7 @@ make data       # clone pinned Retrosheet data, build Chadwick tools, parse, der
 make describe   # descriptive tables and figures (scripts/tab*, scripts/fig*)
 make models     # models, lineup value, credit (scripts/m*)
 make test
+make check-reports   # regenerated tables, and what each figure plots, match the committed versions exactly
 ```
 
 `make all` runs every step. From a fresh clone, `make data` takes about 8
@@ -320,7 +323,8 @@ minutes.
 
 Inputs are pinned by commit in [`config.toml`](config.toml). Raw and derived
 data are written under `data/` and not committed. Files in `reports/` are
-produced by scripts in `scripts/` whose names share their prefix. Descriptive
+produced by scripts in `scripts/` whose names share their prefix. Each figure
+has a `.json` record of what it plots, which CI checks exactly. Descriptive
 findings: [`reports/phase2_descriptives.md`](reports/phase2_descriptives.md).
 
 ## Data

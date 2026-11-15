@@ -8,6 +8,7 @@ dependencies = [
     "pyarrow>=15",
     "numpy>=1.26",
     "matplotlib>=3.8",
+    "pillow>=10",
     "pyfixest>=0.70.0",
 ]
 

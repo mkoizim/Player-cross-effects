@@ -1,0 +1,204 @@
+{
+ "size_in": [
+  7.6,
+  4.4
+ ],
+ "suptitle": "",
+ "texts": [
+  {
+   "text": "Slots whose starter bats left only; PAs vs. relievers; lineup as started. Raw rates, no adjustment. Source: Retrosheet.",
+   "at": [
+    0.01,
+    0.005
+   ],
+   "color": "#52514eff",
+   "size": 7.5,
+   "weight": "normal"
+  }
+ ],
+ "axes": [
+  {
+   "title": {
+    "left": "Left-handed hitters see more left-handed relievers when lefties follow them\nShare of relief-phase plate appearances against a left-hander"
+   },
+   "xlabel": "Batting side of the next two lineup slots (switch hitters counted as right)",
+   "ylabel": "",
+   "xlim": [
+    -0.3,
+    3.75
+   ],
+   "ylim": [
+    0.0,
+    43.3932
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     0.0,
+     1.0,
+     2.0,
+     3.0
+    ],
+    "labels": [
+     "R, R",
+     "R, L",
+     "L, R",
+     "L, L"
+    ]
+   },
+   "yticks": {
+    "at": [
+     0.0,
+     5.0,
+     10.0,
+     15.0,
+     20.0,
+     25.0,
+     30.0,
+     35.0,
+     40.0
+    ],
+    "labels": [
+     "0%",
+     "5%",
+     "10%",
+     "15%",
+     "20%",
+     "25%",
+     "30%",
+     "35%",
+     "40%"
+    ]
+   },
+   "lines": [
+    {
+     "label": "2000–14",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0
+     ],
+     "y": [
+      32.2342,
+      36.3036,
+      42.7977,
+      42.0209
+     ],
+     "color": "#1baf7aff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    },
+    {
+     "label": "2015–19",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0
+     ],
+     "y": [
+      32.0178,
+      35.0504,
+      40.2801,
+      38.3622
+     ],
+     "color": "#2a78d6ff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    },
+    {
+     "label": "2021–25",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0
+     ],
+     "y": [
+      30.8871,
+      35.5699,
+      39.0108,
+      39.6854
+     ],
+     "color": "#eb6834ff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    }
+   ],
+   "patches": [],
+   "collections": [],
+   "texts": [
+    {
+     "text": "2015–19",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      3.0,
+      38.3622
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "2021–25",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      3.0,
+      40.7488
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "2000–14",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      3.0,
+      43.1354
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    }
+   ],
+   "legend": {
+    "title": "Seasons",
+    "entries": [
+     "2000–14",
+     "2015–19",
+     "2021–25"
+    ]
+   }
+  }
+ ]
+}

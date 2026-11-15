@@ -1,0 +1,457 @@
+{
+ "size_in": [
+  10.5,
+  3.8
+ ],
+ "suptitle": "",
+ "texts": [
+  {
+   "text": "Left-handed hitters' relief-phase PAs. Fixed effects: hitter-season-starter hand, opponent-season, slot, inning, base-out, score. 95% intervals, clustered by game.",
+   "at": [
+    0.01,
+    0.005
+   ],
+   "color": "#52514eff",
+   "size": 7.5,
+   "weight": "normal"
+  }
+ ],
+ "axes": [
+  {
+   "title": {
+    "left": "Chance the pitcher is left-handed"
+   },
+   "xlabel": "Effect of a lefty in the next two slots (percentage points)",
+   "ylabel": "",
+   "xlim": [
+    -0.268734,
+    5.64341
+   ],
+   "ylim": [
+    -0.6,
+    2.6
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     0.0,
+     1.0,
+     2.0,
+     3.0,
+     4.0,
+     5.0
+    ],
+    "labels": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   },
+   "yticks": {
+    "at": [
+     2.0,
+     1.0,
+     0.0
+    ],
+    "labels": [
+     "2000–14",
+     "2015–19",
+     "2021–25"
+    ]
+   },
+   "lines": [
+    {
+     "label": "_child0",
+     "x": [
+      0.0,
+      0.0
+     ],
+     "y": [
+      0.0,
+      1.0
+     ],
+     "color": "#52514eff",
+     "style": "-",
+     "width": 1.0,
+     "marker": "None"
+    },
+    {
+     "label": "_child1",
+     "x": [
+      2.0,
+      2.0
+     ],
+     "y": [
+      0.0,
+      1.0
+     ],
+     "color": "#52514eff",
+     "style": "--",
+     "width": 1.0,
+     "marker": "None"
+    },
+    {
+     "label": "_child3",
+     "x": [
+      4.10405,
+      3.07956,
+      4.71613
+     ],
+     "y": [
+      2.0,
+      1.0,
+      0.0
+     ],
+     "color": "#2a78d6ff",
+     "style": "None",
+     "width": 2.0,
+     "marker": "o"
+    }
+   ],
+   "patches": [],
+   "collections": [
+    {
+     "type": "LineCollection",
+     "label": "_child2",
+     "colors": [
+      "#2a78d6ff"
+     ],
+     "segments": [
+      [
+       [
+        3.60643,
+        2.0
+       ],
+       [
+        4.60166,
+        2.0
+       ]
+      ],
+      [
+       [
+        2.26612,
+        1.0
+       ],
+       [
+        3.893,
+        1.0
+       ]
+      ],
+      [
+       [
+        4.05759,
+        0.0
+       ],
+       [
+        5.37468,
+        0.0
+       ]
+      ]
+     ]
+    }
+   ],
+   "texts": [
+    {
+     "text": "+4.1",
+     "at": [
+      0.0,
+      9.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      4.10405,
+      2.0
+     ],
+     "offset": [
+      0.0,
+      9.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "+3.1",
+     "at": [
+      0.0,
+      9.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      3.07956,
+      1.0
+     ],
+     "offset": [
+      0.0,
+      9.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "+4.7",
+     "at": [
+      0.0,
+      9.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      4.71613,
+      0.0
+     ],
+     "offset": [
+      0.0,
+      9.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "threshold for\n“matters”",
+     "at": [
+      4.0,
+      0.0
+     ],
+     "color": "#52514eff",
+     "size": 8.0,
+     "weight": "normal",
+     "xy": [
+      2.0,
+      2.55
+     ],
+     "offset": [
+      4.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    }
+   ],
+   "legend": null
+  },
+  {
+   "title": {
+    "left": "Value to the hitter's slot, full season"
+   },
+   "xlabel": "Effect of a lefty in the next two slots (runs per 600 PA)",
+   "ylabel": "",
+   "xlim": [
+    -1.25,
+    0.1
+   ],
+   "ylim": [
+    -0.6,
+    2.6
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     -1.2,
+     -1.0,
+     -0.8,
+     -0.6,
+     -0.4,
+     -0.2,
+     0.0
+    ],
+    "labels": [
+     "−1.2",
+     "−1.0",
+     "−0.8",
+     "−0.6",
+     "−0.4",
+     "−0.2",
+     "0.0"
+    ]
+   },
+   "yticks": {
+    "at": [
+     2.0,
+     1.0,
+     0.0
+    ],
+    "labels": [
+     "2000–14",
+     "2015–19",
+     "2021–25"
+    ]
+   },
+   "lines": [
+    {
+     "label": "_child0",
+     "x": [
+      0.0,
+      0.0
+     ],
+     "y": [
+      0.0,
+      1.0
+     ],
+     "color": "#52514eff",
+     "style": "-",
+     "width": 1.0,
+     "marker": "None"
+    },
+    {
+     "label": "_child1",
+     "x": [
+      -1.0,
+      -1.0
+     ],
+     "y": [
+      0.0,
+      1.0
+     ],
+     "color": "#52514eff",
+     "style": "--",
+     "width": 1.0,
+     "marker": "None"
+    },
+    {
+     "label": "_child3",
+     "x": [
+      -0.239907,
+      -0.218561,
+      -0.357745
+     ],
+     "y": [
+      2.0,
+      1.0,
+      0.0
+     ],
+     "color": "#2a78d6ff",
+     "style": "None",
+     "width": 2.0,
+     "marker": "o"
+    }
+   ],
+   "patches": [],
+   "collections": [
+    {
+     "type": "LineCollection",
+     "label": "_child2",
+     "colors": [
+      "#2a78d6ff"
+     ],
+     "segments": [
+      [
+       [
+        -0.287524,
+        2.0
+       ],
+       [
+        -0.192289,
+        2.0
+       ]
+      ],
+      [
+       [
+        -0.3034,
+        1.0
+       ],
+       [
+        -0.133721,
+        1.0
+       ]
+      ],
+      [
+       [
+        -0.434767,
+        0.0
+       ],
+       [
+        -0.280723,
+        0.0
+       ]
+      ]
+     ]
+    }
+   ],
+   "texts": [
+    {
+     "text": "-0.24",
+     "at": [
+      0.0,
+      9.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      -0.239907,
+      2.0
+     ],
+     "offset": [
+      0.0,
+      9.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "-0.22",
+     "at": [
+      0.0,
+      9.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      -0.218561,
+      1.0
+     ],
+     "offset": [
+      0.0,
+      9.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "-0.36",
+     "at": [
+      0.0,
+      9.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      -0.357745,
+      0.0
+     ],
+     "offset": [
+      0.0,
+      9.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "threshold for\n“matters”",
+     "at": [
+      -4.0,
+      0.0
+     ],
+     "color": "#52514eff",
+     "size": 8.0,
+     "weight": "normal",
+     "xy": [
+      -1.0,
+      2.55
+     ],
+     "offset": [
+      -4.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    }
+   ],
+   "legend": null
+  }
+ ]
+}
