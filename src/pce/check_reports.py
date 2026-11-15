@@ -1,52 +1,54 @@
 """Check that regenerated reports match the committed ones.
 
-Run after `make describe models`. Tables and every other text output must be
-byte-identical to the committed version. Figures (PNG) must be pixel-identical:
-PNG compression can differ between machines while the image does not, so their
-bytes are not compared. Any new, missing or changed file fails the check.
+Run after `make describe models`. Every table, and every figure's record of what it plots
+(`reports/figures/*.json`, written by `pce.describe.save`), must be byte-identical to the
+committed version. Figure PNGs are not compared: the same plot rasterizes to different pixels
+on different machines (fonts, anti-aliasing), so a PNG only has to exist, open as an image
+and have a record. Any new or missing report fails.
 """
 
-import io
 import subprocess
 import sys
+from pathlib import Path
 
-import numpy as np
 from PIL import Image
 
 
-def _git(*args: str) -> bytes:
-    return subprocess.run(["git", *args], check=True, capture_output=True).stdout
-
-
-def _pixels(data: bytes) -> np.ndarray:
-    return np.asarray(Image.open(io.BytesIO(data)).convert("RGBA"))
+def _git(*args: str) -> str:
+    return subprocess.run(["git", *args], check=True, capture_output=True, text=True).stdout
 
 
 def main() -> int:
-    status = _git("status", "--porcelain", "--untracked-files=all", "--", "reports/")
     problems = []
-    same_pixels = 0
-    for line in status.decode().splitlines():
+    redrawn = 0
+    for line in _git("status", "--porcelain", "--untracked-files=all", "--", "reports/").splitlines():
         code, path = line[:2], line[3:]
         if code.strip() != "M":
             problems.append(f"{path}: {'new, not committed' if code == '??' else 'missing or renamed'}")
-            continue
-        if not path.endswith(".png"):
-            problems.append(f"{path}: content differs")
-            continue
-        old, new = _pixels(_git("show", f"HEAD:{path}")), _pixels(open(path, "rb").read())
-        if old.shape != new.shape:
-            problems.append(f"{path}: size {old.shape[1]}x{old.shape[0]} -> {new.shape[1]}x{new.shape[0]}")
-        elif not np.array_equal(old, new):
-            n = int(np.any(old != new, axis=-1).sum())
-            problems.append(f"{path}: {n:,} of {old.shape[0] * old.shape[1]:,} pixels differ")
+        elif path.endswith(".png"):
+            redrawn += 1
         else:
-            same_pixels += 1
+            problems.append(f"{path}: content differs")
+            if path.endswith(".json"):
+                diff = _git("diff", "--no-color", "-U0", "--", path).splitlines()[4:24]
+                problems.extend(f"    {d}" for d in diff)
 
-    print(f"reports/: {same_pixels} figure(s) re-encoded with identical pixels; "
-          f"{len(problems)} problem(s).")
+    figures = Path("reports/figures")
+    for png in sorted(figures.glob("*.png")):
+        if not png.with_suffix(".json").exists():
+            problems.append(f"{png}: no record of what it plots (.json)")
+        try:
+            Image.open(png).verify()
+        except Exception as e:  # noqa: BLE001 - any decode failure is a failed report
+            problems.append(f"{png}: not a readable image ({e})")
+    for rec in sorted(figures.glob("*.json")):
+        if not rec.with_suffix(".png").exists():
+            problems.append(f"{rec}: record without a figure")
+
+    print(f"reports/: {redrawn} figure(s) redrawn with different pixels (not compared); "
+          f"{sum(not p.startswith('    ') for p in problems)} problem(s).")
     for p in problems:
-        print("FAIL", p)
+        print(p if p.startswith("    ") else f"FAIL {p}")
     return 1 if problems else 0
 
 

@@ -1,0 +1,260 @@
+{
+ "size_in": [
+  7.2,
+  4.0
+ ],
+ "suptitle": "",
+ "texts": [
+  {
+   "text": "Effect on the chance a left-handed hitter faces a left-handed reliever. 95% intervals clustered by game.",
+   "at": [
+    0.01,
+    0.005
+   ],
+   "color": "#52514eff",
+   "size": 7.5,
+   "weight": "normal"
+  }
+ ],
+ "axes": [
+  {
+   "title": {
+    "left": "The neighbor effect needs lefties in the other bullpen"
+   },
+   "xlabel": "Left-handed relievers in the opposing bullpen",
+   "ylabel": "Effect of a lefty in the next two slots (pp)",
+   "xlim": [
+    -0.288,
+    4.288
+   ],
+   "ylim": [
+    -4.83276,
+    7.73619
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     0.0,
+     1.0,
+     2.0,
+     3.0,
+     4.0
+    ],
+    "labels": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4+"
+    ]
+   },
+   "yticks": {
+    "at": [
+     -4.0,
+     -2.0,
+     0.0,
+     2.0,
+     4.0,
+     6.0
+    ],
+    "labels": [
+     "−4",
+     "−2",
+     "0",
+     "2",
+     "4",
+     "6"
+    ]
+   },
+   "lines": [
+    {
+     "label": "2015–19",
+     "x": [
+      -0.08,
+      0.92,
+      1.92,
+      2.92,
+      3.92
+     ],
+     "y": [
+      0.517485,
+      1.89732,
+      3.58237,
+      3.81985,
+      2.32545
+     ],
+     "color": "#2a78d6ff",
+     "style": "None",
+     "width": 2.0,
+     "marker": "o"
+    },
+    {
+     "label": "2021–25",
+     "x": [
+      0.08,
+      1.08,
+      2.08,
+      3.08,
+      4.08
+     ],
+     "y": [
+      0.0796966,
+      5.12419,
+      4.04095,
+      5.15562,
+      4.26197
+     ],
+     "color": "#eb6834ff",
+     "style": "None",
+     "width": 2.0,
+     "marker": "o"
+    },
+    {
+     "label": "_child4",
+     "x": [
+      0.0,
+      1.0
+     ],
+     "y": [
+      0.0,
+      0.0
+     ],
+     "color": "#52514eff",
+     "style": "-",
+     "width": 1.0,
+     "marker": "None"
+    }
+   ],
+   "patches": [],
+   "collections": [
+    {
+     "type": "LineCollection",
+     "label": "_child0",
+     "colors": [
+      "#2a78d6ff"
+     ],
+     "segments": [
+      [
+       [
+        -0.08,
+        -4.26144
+       ],
+       [
+        -0.08,
+        5.29641
+       ]
+      ],
+      [
+       [
+        0.92,
+        -0.441222
+       ],
+       [
+        0.92,
+        4.23586
+       ]
+      ],
+      [
+       [
+        1.92,
+        2.12996
+       ],
+       [
+        1.92,
+        5.03478
+       ]
+      ],
+      [
+       [
+        2.92,
+        2.21297
+       ],
+       [
+        2.92,
+        5.42674
+       ]
+      ],
+      [
+       [
+        3.92,
+        0.226017
+       ],
+       [
+        3.92,
+        4.42488
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "LineCollection",
+     "label": "_child2",
+     "colors": [
+      "#eb6834ff"
+     ],
+     "segments": [
+      [
+       [
+        0.08,
+        -1.67465
+       ],
+       [
+        0.08,
+        1.83404
+       ]
+      ],
+      [
+       [
+        1.08,
+        3.08351
+       ],
+       [
+        1.08,
+        7.16487
+       ]
+      ],
+      [
+       [
+        2.08,
+        2.79637
+       ],
+       [
+        2.08,
+        5.28553
+       ]
+      ],
+      [
+       [
+        3.08,
+        3.91496
+       ],
+       [
+        3.08,
+        6.39628
+       ]
+      ],
+      [
+       [
+        4.08,
+        2.79183
+       ],
+       [
+        4.08,
+        5.73211
+       ]
+      ]
+     ]
+    }
+   ],
+   "texts": [],
+   "legend": {
+    "title": "Seasons",
+    "entries": [
+     "2015–19",
+     "2021–25"
+    ]
+   }
+  }
+ ]
+}

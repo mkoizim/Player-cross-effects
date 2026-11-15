@@ -1,0 +1,463 @@
+{
+ "size_in": [
+  10.5,
+  4.1
+ ],
+ "suptitle": "",
+ "texts": [
+  {
+   "text": "Starting lineups, regular season. Source: Retrosheet.",
+   "at": [
+    0.01,
+    0.005
+   ],
+   "color": "#52514eff",
+   "size": 7.5,
+   "weight": "normal"
+  }
+ ],
+ "axes": [
+  {
+   "title": {
+    "left": "Lefties in the lineup vs. a right-handed starter"
+   },
+   "xlabel": "Left-only hitters among the nine starters",
+   "ylabel": "Share of team-games",
+   "xlim": [
+    -0.696,
+    6.696
+   ],
+   "ylim": [
+    0.0,
+    32.3821
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     0.0,
+     1.0,
+     2.0,
+     3.0,
+     4.0,
+     5.0,
+     6.0
+    ],
+    "labels": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6+"
+    ]
+   },
+   "yticks": {
+    "at": [
+     0.0,
+     5.0,
+     10.0,
+     15.0,
+     20.0,
+     25.0,
+     30.0
+    ],
+    "labels": [
+     "0%",
+     "5%",
+     "10%",
+     "15%",
+     "20%",
+     "25%",
+     "30%"
+    ]
+   },
+   "lines": [],
+   "patches": [
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      -0.36,
+      0.0,
+      0.34,
+      1.14943
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      0.64,
+      0.0,
+      0.34,
+      8.06885
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      1.64,
+      0.0,
+      0.34,
+      24.0522
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      2.64,
+      0.0,
+      0.34,
+      30.8401
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      3.64,
+      0.0,
+      0.34,
+      23.4746
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      4.64,
+      0.0,
+      0.34,
+      9.69863
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      5.64,
+      0.0,
+      0.34,
+      2.7163
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      0.02,
+      0.0,
+      0.34,
+      1.1205
+     ],
+     "color": "#eb6834ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      1.02,
+      0.0,
+      0.34,
+      5.47607
+     ],
+     "color": "#eb6834ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      2.02,
+      0.0,
+      0.34,
+      15.6755
+     ],
+     "color": "#eb6834ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      3.02,
+      0.0,
+      0.34,
+      30.0236
+     ],
+     "color": "#eb6834ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      4.02,
+      0.0,
+      0.34,
+      28.7766
+     ],
+     "color": "#eb6834ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      5.02,
+      0.0,
+      0.34,
+      14.7273
+     ],
+     "color": "#eb6834ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      6.02,
+      0.0,
+      0.34,
+      4.20043
+     ],
+     "color": "#eb6834ff"
+    }
+   ],
+   "collections": [],
+   "texts": [],
+   "legend": {
+    "title": "Seasons",
+    "entries": [
+     "2015–19",
+     "2021–25"
+    ]
+   }
+  },
+  {
+   "title": {
+    "left": "Lefties in the lineup vs. a left-handed starter"
+   },
+   "xlabel": "Left-only hitters among the nine starters",
+   "ylabel": "",
+   "xlim": [
+    -0.696,
+    6.696
+   ],
+   "ylim": [
+    0.0,
+    36.6807
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     0.0,
+     1.0,
+     2.0,
+     3.0,
+     4.0,
+     5.0,
+     6.0
+    ],
+    "labels": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6+"
+    ]
+   },
+   "yticks": {
+    "at": [
+     0.0,
+     5.0,
+     10.0,
+     15.0,
+     20.0,
+     25.0,
+     30.0,
+     35.0
+    ],
+    "labels": [
+     "0%",
+     "5%",
+     "10%",
+     "15%",
+     "20%",
+     "25%",
+     "30%",
+     "35%"
+    ]
+   },
+   "lines": [],
+   "patches": [
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      -0.36,
+      0.0,
+      0.34,
+      10.5773
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      0.64,
+      0.0,
+      0.34,
+      31.7027
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      1.64,
+      0.0,
+      0.34,
+      32.3637
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      2.64,
+      0.0,
+      0.34,
+      18.5985
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      3.64,
+      0.0,
+      0.34,
+      5.67063
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      4.64,
+      0.0,
+      0.34,
+      0.998972
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      5.64,
+      0.0,
+      0.34,
+      0.0881446
+     ],
+     "color": "#2a78d6ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      0.02,
+      0.0,
+      0.34,
+      10.2713
+     ],
+     "color": "#eb6834ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      1.02,
+      0.0,
+      0.34,
+      27.7383
+     ],
+     "color": "#eb6834ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      2.02,
+      0.0,
+      0.34,
+      34.934
+     ],
+     "color": "#eb6834ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      3.02,
+      0.0,
+      0.34,
+      20.1944
+     ],
+     "color": "#eb6834ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      4.02,
+      0.0,
+      0.34,
+      5.46932
+     ],
+     "color": "#eb6834ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      5.02,
+      0.0,
+      0.34,
+      1.20412
+     ],
+     "color": "#eb6834ff"
+    },
+    {
+     "type": "Rectangle",
+     "label": "_nolegend_",
+     "box": [
+      6.02,
+      0.0,
+      0.34,
+      0.188597
+     ],
+     "color": "#eb6834ff"
+    }
+   ],
+   "collections": [],
+   "texts": [],
+   "legend": null
+  }
+ ]
+}

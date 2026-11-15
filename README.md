@@ -315,7 +315,7 @@ make data       # clone pinned Retrosheet data, build Chadwick tools, parse, der
 make describe   # descriptive tables and figures (scripts/tab*, scripts/fig*)
 make models     # models, lineup value, credit (scripts/m*)
 make test
-make check-reports   # regenerated tables match committed byte-for-byte, figures pixel-for-pixel
+make check-reports   # regenerated tables, and what each figure plots, match the committed versions exactly
 ```
 
 `make all` runs every step. From a fresh clone, `make data` takes about 8
@@ -323,7 +323,8 @@ minutes.
 
 Inputs are pinned by commit in [`config.toml`](config.toml). Raw and derived
 data are written under `data/` and not committed. Files in `reports/` are
-produced by scripts in `scripts/` whose names share their prefix. Descriptive
+produced by scripts in `scripts/` whose names share their prefix. Each figure
+has a `.json` record of what it plots, which CI checks exactly. Descriptive
 findings: [`reports/phase2_descriptives.md`](reports/phase2_descriptives.md).
 
 ## Data

@@ -1,0 +1,420 @@
+{
+ "size_in": [
+  10.5,
+  4.2
+ ],
+ "suptitle": "Left-handed relief exposure by how many other lefties are in the lineup",
+ "texts": [
+  {
+   "text": "Left-handed relief exposure by how many other lefties are in the lineup",
+   "at": [
+    0.01,
+    0.98
+   ],
+   "color": "#0b0b0bff",
+   "size": 11.5,
+   "weight": "bold"
+  },
+  {
+   "text": "Slots whose starter bats left only; PAs vs. relievers. Cells under 500 PAs not drawn. Raw rates. Source: Retrosheet.",
+   "at": [
+    0.01,
+    0.005
+   ],
+   "color": "#52514eff",
+   "size": 7.5,
+   "weight": "normal"
+  }
+ ],
+ "axes": [
+  {
+   "title": {
+    "left": "Games started by a right-handed opponent"
+   },
+   "xlabel": "Other left-only hitters in the starting lineup",
+   "ylabel": "Relief-phase PAs vs. a left-hander",
+   "xlim": [
+    -0.3,
+    6.1
+   ],
+   "ylim": [
+    0.0,
+    45.0
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     0.0,
+     1.0,
+     2.0,
+     3.0,
+     4.0,
+     5.0
+    ],
+    "labels": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5+"
+    ]
+   },
+   "yticks": {
+    "at": [
+     0.0,
+     5.0,
+     10.0,
+     15.0,
+     20.0,
+     25.0,
+     30.0,
+     35.0,
+     40.0,
+     45.0
+    ],
+    "labels": [
+     "0%",
+     "5%",
+     "10%",
+     "15%",
+     "20%",
+     "25%",
+     "30%",
+     "35%",
+     "40%",
+     "45%"
+    ]
+   },
+   "lines": [
+    {
+     "label": "2000–14",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0
+     ],
+     "y": [
+      31.8733,
+      33.3667,
+      35.2122,
+      37.1755,
+      38.0746,
+      40.2377
+     ],
+     "color": "#1baf7aff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    },
+    {
+     "label": "2015–19",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0
+     ],
+     "y": [
+      32.7163,
+      33.4654,
+      34.8479,
+      34.7284,
+      36.3929,
+      34.2365
+     ],
+     "color": "#2a78d6ff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    },
+    {
+     "label": "2021–25",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0
+     ],
+     "y": [
+      31.8832,
+      33.0466,
+      33.4261,
+      34.7342,
+      36.5799,
+      38.3221
+     ],
+     "color": "#eb6834ff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    }
+   ],
+   "patches": [],
+   "collections": [],
+   "texts": [
+    {
+     "text": "2015–19",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      5.0,
+      34.2365
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "2021–25",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      5.0,
+      38.3221
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "2000–14",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      5.0,
+      40.7971
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    }
+   ],
+   "legend": {
+    "title": "Seasons",
+    "entries": [
+     "2000–14",
+     "2015–19",
+     "2021–25"
+    ]
+   }
+  },
+  {
+   "title": {
+    "left": "Games started by a left-handed opponent"
+   },
+   "xlabel": "Other left-only hitters in the starting lineup",
+   "ylabel": "",
+   "xlim": [
+    -0.3,
+    6.1
+   ],
+   "ylim": [
+    0.0,
+    45.0
+   ],
+   "xscale": "linear",
+   "yscale": "linear",
+   "xticks": {
+    "at": [
+     0.0,
+     1.0,
+     2.0,
+     3.0,
+     4.0,
+     5.0
+    ],
+    "labels": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5+"
+    ]
+   },
+   "yticks": {
+    "at": [
+     0.0,
+     5.0,
+     10.0,
+     15.0,
+     20.0,
+     25.0,
+     30.0,
+     35.0,
+     40.0,
+     45.0
+    ],
+    "labels": [
+     "0%",
+     "5%",
+     "10%",
+     "15%",
+     "20%",
+     "25%",
+     "30%",
+     "35%",
+     "40%",
+     "45%"
+    ]
+   },
+   "lines": [
+    {
+     "label": "2000–14",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0
+     ],
+     "y": [
+      29.4203,
+      30.8444,
+      31.6259,
+      34.6939,
+      37.9916
+     ],
+     "color": "#1baf7aff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    },
+    {
+     "label": "2015–19",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0
+     ],
+     "y": [
+      31.0044,
+      31.1608,
+      31.8923,
+      33.0408,
+      34.8485
+     ],
+     "color": "#2a78d6ff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    },
+    {
+     "label": "2021–25",
+     "x": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0
+     ],
+     "y": [
+      30.5769,
+      31.0137,
+      31.051,
+      29.4803,
+      22.5225
+     ],
+     "color": "#eb6834ff",
+     "style": "-",
+     "width": 2.0,
+     "marker": "o"
+    }
+   ],
+   "patches": [],
+   "collections": [],
+   "texts": [
+    {
+     "text": "2021–25",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      4.0,
+      22.5225
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "2015–19",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      4.0,
+      34.8485
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    },
+    {
+     "text": "2000–14",
+     "at": [
+      9.0,
+      0.0
+     ],
+     "color": "#0b0b0bff",
+     "size": 9.0,
+     "weight": "normal",
+     "xy": [
+      4.0,
+      37.9916
+     ],
+     "offset": [
+      9.0,
+      0.0
+     ],
+     "offset_units": "offset points"
+    }
+   ],
+   "legend": null
+  }
+ ]
+}

@@ -29,7 +29,7 @@ models:                 ## Phase 3 models, lineup value, credit allocation
 test:
 	uv run pytest -q
 
-check-reports:          ## regenerated reports match committed: tables byte-for-byte, figures pixel-for-pixel
+check-reports:          ## tables and figure records (what each figure plots) match committed exactly
 	$(PY) -m pce.check_reports
 
 clean:

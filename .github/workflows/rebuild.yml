@@ -1,6 +1,6 @@
 # Rebuilds everything from pinned inputs on a clean machine, runs the checks,
-# and fails if any committed table differs from its regenerated version or any
-# committed figure differs in its pixels (see src/pce/check_reports.py).
+# and fails if any committed table, or any record of what a figure plots, differs
+# from its regenerated version (see src/pce/check_reports.py).
 name: rebuild
 
 on:
