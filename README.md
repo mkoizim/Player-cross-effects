@@ -301,6 +301,8 @@ that nothing exists.
 \* added after the descriptive phase.
 
 ## How this was made
+This project was executed as a test of Claude Fable 5.2’s 
+research design and execution capabilities.
 
 The question is mine: how does the presence of RHH in a lineup benefit 
 the performance of LHH (and vice versa). The code was written, and the 
@@ -320,7 +322,7 @@ with new tables (`scripts/m11_lineup_followups.py`). The agent's standing
 instructions are in [`CLAUDE.md`](CLAUDE.md). 
 
 Critically, I maintain final direction over how to interpret and act on 
-findings.
+findings, and have modified this README.md accordingly.
 
 ## Reproduce
 
