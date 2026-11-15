@@ -1,15 +1,29 @@
 # Do right-handed hitters protect the lefties around them?
 
-**Short answer: yes in how opponents use their bullpen, no in any amount worth
-paying for.** A left-handed hitter with a lefty in one of the next two lineup
-slots is 4.7 percentage points more likely to face a left-handed reliever than
-one followed by two righties. Over a full season that costs him about a third
-of a run, or roughly $0.4 million at free-agent prices. That is worth taking
-when it is free (the batting order) and not worth a premium when it is not
-(an acquisition). What does carry a few runs is keeping lefties from batting
-back to back, which takes a right-handed or switch hitter to put between them.
-Teams already do about half of that separating, and most of what is left is
-under a run a season.
+**Short answer: yes, through separation.** Keeping left-handed hitters from
+batting next to each other is worth up to about 5 runs a season, half a win,
+and it takes right-handed or switch hitters to do it. That value is spread
+across the batting lines of the lefties and the righties involved, so every
+hitter's observed production carries some of the lineup he played in.
+
+Three numbers frame it:
+
+- **About 5 runs** separate the best and worst ways to arrange the same
+  hitters (4.6 for three lefties spread out versus batted consecutively;
+  interval 4.0 to 5.2). That is the size of the thing a roster's handedness
+  mix makes possible.
+- **About 3.5 runs** separate the most and least favorable 2025 clubs as they
+  actually lined up (from +1.1 to −2.4). Teams have about half as many
+  adjacent lefties as chance would give them, and 18% of lineups carry five or
+  more lefties and cannot avoid adjacency at all.
+- **About 1 run** is what one right-handed hitter does for his teammates by
+  standing between two lefties, and about a third of a run is what any single
+  neighbor does for one lefty. At the level of one player the effect is
+  small: worth using as a tiebreaker, not worth a premium.
+
+So this is a team-construction and lineup-card result more than a
+player-valuation one. It is worth planning a roster around; it does not
+justify paying an individual hitter for "protection."
 
 Regular seasons 2000–2025, 4.7 million plate appearances, Retrosheet
 play-by-play. Design, hypotheses and thresholds were written before the data
@@ -17,12 +31,7 @@ were examined ([`DESIGN.md`](DESIGN.md)); changes made afterwards are labelled.
 
 ## What a front office should take from this
 
-1. **Don't pay for "lineup balance" as protection.** The effect of neighbors
-   on a lefty's matchups is real and precisely measured, and it is worth
-   0.36 runs per 600 PA (95% interval 0.28 to 0.43), about $0.4 million a
-   season. See [what that is worth](#what-a-third-of-a-run-is-worth) for the
-   benchmark.
-2. **Do keep lefties apart in the order, and that is what right-handed
+1. **Do keep lefties apart in the order, and that is what right-handed
    hitters are for.** Arrangement matters more than count. Three left-handed
    hitters spread through the order are worth about 4.6 runs a season more
    than the same three batted consecutively (interval 4.0 to 5.2). About 3.0
@@ -30,6 +39,11 @@ were examined ([`DESIGN.md`](DESIGN.md)); changes made afterwards are labelled.
    the righties' (0.26 each). Separating lefties requires a non-lefty to put
    between them, so the original intuition holds in direction: righties, and
    switch hitters equally, make this possible.
+2. **Don't pay an individual hitter for "protection."** The effect of neighbors
+   on a lefty's matchups is real and precisely measured, and it is worth
+   0.36 runs per 600 PA (95% interval 0.28 to 0.43), about $0.4 million a
+   season. See [what that is worth](#what-a-third-of-a-run-is-worth) for the
+   benchmark.
 3. **Teams capture about half of it already.** In 2025, lineups had 0.57
    pairs of adjacent lefties per game against 1.14 if the same nine hitters
    were ordered at random, and 29 of 30 clubs were below their random figure.
@@ -47,7 +61,10 @@ were examined ([`DESIGN.md`](DESIGN.md)); changes made afterwards are labelled.
    with the player to a differently shaped lineup. In 2021–25 hitter-seasons
    the part of a line owed to neighbors never exceeded about half a run
    (0.05 WAR); the per-player figures are in
-   [`m08_context_all.csv`](reports/tables/m08_context_all.csv).
+   [`m08_context_all.csv`](reports/tables/m08_context_all.csv). For
+   projections, that makes it a real but minor adjustment for one hitter
+   changing teams, well inside ordinary projection error, and a larger one
+   when summed over a lineup whose handedness mix is changing.
 5. **Who a hitter faces is worth runs, but it comes from how he is used, not
    from who bats near him.** Across 2021–25, a left-handed regular's matchup
    context ranges from about −2.5 to +1.7 runs a season (5th to 95th
