@@ -1,0 +1,36 @@
+# Rebuilds everything from pinned inputs on a clean machine, runs the checks,
+# and fails if any committed table or figure differs from the regenerated one.
+name: rebuild
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build tools for Chadwick
+        run: sudo apt-get update && sudo apt-get install -y autoconf automake libtool
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Fetch, parse and derive (make data)
+        run: make data
+
+      - name: Descriptive tables and figures (make describe)
+        run: make describe
+
+      - name: Models, lineup value and credit (make models)
+        run: make models
+
+      - name: Checks against Retrosheet game logs (make test)
+        run: make test
+
+      - name: Committed reports match regenerated reports
+        run: git diff --stat --exit-code -- reports/
